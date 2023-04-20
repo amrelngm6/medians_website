@@ -1,0 +1,116 @@
+[25-Aug-2022 01:41:25 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Medians\Application\Configuration" not found in /home3/mediaons/public_html/app/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 11
+[25-Aug-2022 01:41:54 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Medians\Application" not found in /home3/mediaons/public_html/app/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 11
+[25-Aug-2022 01:42:13 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Medians\Application\Pages\Page" not found in /home3/mediaons/public_html/app/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 11
+[25-Aug-2022 01:42:33 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Twig\Environment" not found in /home3/mediaons/public_html/app/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 11
+[25-Aug-2022 01:42:54 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Twig\Environment" not found in /home3/mediaons/public_html/app/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 11
+[25-Aug-2022 01:42:56 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Twig\Environment" not found in /home3/mediaons/public_html/app/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 11
+[25-Aug-2022 01:43:12 America/Chicago] PHP Warning:  require_once(/home3/mediaons/public_html/app/vendor/autoload.php): Failed to open stream: No such file or directory in /home3/mediaons/public_html/app/index.php on line 3
+[25-Aug-2022 01:43:12 America/Chicago] PHP Fatal error:  Uncaught Error: Failed opening required '/home3/mediaons/public_html/app/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home3/mediaons/public_html/app/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 3
+[25-Aug-2022 01:43:24 America/Chicago] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Twig\Environment::__construct(), 0 passed in /home3/mediaons/public_html/app/index.php on line 13 and at least 1 expected in /home3/mediaons/public_html/vendor/twig/twig/src/Environment.php:102
+Stack trace:
+#0 /home3/mediaons/public_html/app/index.php(13): Twig\Environment->__construct()
+#1 {main}
+  thrown in /home3/mediaons/public_html/vendor/twig/twig/src/Environment.php on line 102
+[25-Aug-2022 01:43:47 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Medians\Application\Configuration" not found in /home3/mediaons/public_html/app/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 13
+[25-Aug-2022 01:43:58 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Medians\Application\Pages\Page" not found in /home3/mediaons/public_html/app/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 13
+[25-Aug-2022 01:44:02 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Medians\Application\Pages\Page" not found in /home3/mediaons/public_html/app/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 13
+[25-Aug-2022 01:44:15 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Medians\Application\Pages\Page" not found in /home3/mediaons/public_html/app/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 13
+[25-Aug-2022 01:44:41 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Medians\Application\Pages\Page" not found in /home3/mediaons/public_html/app/index.php:20
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 20
+[25-Aug-2022 01:45:09 America/Chicago] PHP Fatal error:  Uncaught Error: Class "apps\Configuration" not found in /home3/mediaons/public_html/app/index.php:60
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 60
+[25-Aug-2022 01:45:50 America/Chicago] PHP Fatal error:  Uncaught Error: Class "apps\Configuration" not found in /home3/mediaons/public_html/app/index.php:61
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 61
+[25-Aug-2022 01:46:16 America/Chicago] PHP Fatal error:  Uncaught Error: Class "apps\Configuration" not found in /home3/mediaons/public_html/app/index.php:61
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 61
+[25-Aug-2022 01:47:04 America/Chicago] PHP Fatal error:  Uncaught Error: Class "apps\Configuration" not found in /home3/mediaons/public_html/app/index.php:61
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 61
+[25-Aug-2022 01:48:01 America/Chicago] PHP Fatal error:  Uncaught Error: Class "apps\Configuration" not found in /home3/mediaons/public_html/app/index.php:62
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 62
+[25-Aug-2022 01:48:30 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Medians\Application\Configuration" not found in /home3/mediaons/public_html/app/index.php:62
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 62
+[25-Aug-2022 01:48:46 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Medians\Application\Configuration" not found in /home3/mediaons/public_html/app/index.php:62
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 62
+[25-Aug-2022 01:49:00 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Medians\Application\Configuration" not found in /home3/mediaons/public_html/app/index.php:62
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 62
+[25-Aug-2022 01:49:17 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Medians\Application\Configuration" not found in /home3/mediaons/public_html/app/index.php:62
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 62
+[25-Aug-2022 01:49:18 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Medians\Application\Configuration" not found in /home3/mediaons/public_html/app/index.php:62
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 62
+[25-Aug-2022 01:50:58 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Medians\Application\Configuration" not found in /home3/mediaons/public_html/app/index.php:62
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 62
+[25-Aug-2022 01:51:11 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Medians\Application\Configuration" not found in /home3/mediaons/public_html/app/index.php:62
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 62
+[25-Aug-2022 01:51:44 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Medians\Application\Configuration" not found in /home3/mediaons/public_html/app/index.php:62
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 62
+[25-Aug-2022 01:53:31 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Medians\Application\Configuration" not found in /home3/mediaons/public_html/app/index.php:62
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 62
+[25-Aug-2022 01:53:34 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Medians\Application\Configuration" not found in /home3/mediaons/public_html/app/index.php:62
+Stack trace:
+#0 {main}
+  thrown in /home3/mediaons/public_html/app/index.php on line 62
+[25-Aug-2022 01:54:24 America/Chicago] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home3/mediaons/public_html/app/index.php on line 65
+[25-Aug-2022 01:55:23 America/Chicago] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home3/mediaons/public_html/app/index.php on line 65

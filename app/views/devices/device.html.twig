@@ -1,0 +1,87 @@
+
+
+                        <!-- Main sidebar -->
+                        <div x-data="{ deviceId: {{device.device.id}} }" :class="{ 'dark': deviceId }" class="main-sidebar show activate p-6 shadow-lg  bg-white fixed rounded right-4 bottom-0 shadow-2xl  transform transition duration-400 w-full">
+
+                            <div class="relative w-full overflow-y-auto h-auto" style="max-height: 90vh; overflow: auto;">
+                                <a href="#!" class="ToggleItem float-right" data-toggle-target=".main-sidebar" data-toggle-class="activate">X</a>
+                                {% if device.device.playing == 0 %}
+
+                                <form action="{{formAction}}" method="POST" data-refresh="1" id="limited-device-order" class="ajax-form p-8 py-0 m-auto rounded-lg  pb-10">
+                                    <h1 class="m-auto  text-2xl mb-10 text-center">{{device.device.title}}</h1>
+                                    <input name="type"  type="hidden" value="newDeviceOrder" > 
+                                    <input name="params[id]"  type="hidden" value="{{device.device.id}}" >
+
+                                    <label :click="{deviceId: false  }" for="multiple-player" class="w-full clear block h-14 items-center mt-3">
+                                        <input name="params[multiple]"  type="checkbox" class="form-checkbox h-5 w-5 text-orange-600" >
+                                        <span class="ml-2 text-gray-700">Multi players ?</span> 
+                                    </label>
+
+                                    <div class="row">
+                                        <div class="col-md-6"> 
+                                            <input name="params[hours]" type="number" class="h-12 mt-3 rounded w-full border px-3 text-gray-400  focus:border-blue-100 dark:bg-gray-800 dark:border-gray-600" placeholder="Hours">
+                                        </div>
+                                        <div class="col-md-6"> 
+                                            <input name="params[minutes]" type="number" class="h-12 mt-3 rounded w-full border px-3 text-gray-400  focus:border-blue-100 dark:bg-gray-800 dark:border-gray-600" placeholder="Minutes">
+                                        </div>
+                                    </div>
+
+                                    <button class="uppercase h-12 mt-3 text-white w-full rounded bg-green-700 hover:bg-green-600">Start timer</button>
+                                </form>
+
+                                <form action="{{formAction}}" method="POST" data-refresh="1" id="unlimited-device-order" class="ajax-form p-8 py-0 m-auto rounded-lg  pb-10">
+                                    <input name="type"  type="hidden" value="newDeviceOrder" > 
+                                    <input name="params[id]"  type="hidden" value="{{device.device.id}}" >
+
+                                    <label :click="{deviceId: false  }" for="multiple-player" class="w-full clear block h-14 items-center mt-3">
+                                        <input name="params[multiple]"  type="checkbox" class="form-checkbox h-5 w-5 text-orange-600" >
+                                        <span class="ml-2 text-gray-700">Multi players ?</span> 
+                                    </label>
+
+                                    <button class="uppercase block text-center pt-3 pb-3 mt-10 text-white w-full rounded text-white bg-red-800 hover:bg-red-600  hover:text-white">Unlimited time</button>
+                                </form>
+                                {% endif  %}
+
+
+                                {% if device.device.playing %}
+
+                                <ul class="flex flex-col divide divide-y">
+                                    {% for product in device.currentOrder.products %}
+                                    <li class="flex flex-row">
+                                        <div class="select-none cursor-pointer flex flex-1 items-center p-4">
+                                            <div class="flex-1 pl-1 mr-16">
+                                                <div class="font-medium dark:text-white">
+                                                    {{product.product.title}}
+                                                </div>
+                                                <div class="text-gray-600 dark:text-gray-200 text-sm">
+                                                    x {{product.qty}}
+                                                </div>
+                                            </div>
+                                            <div class="text-gray-600 dark:text-gray-200 text-md">
+                                                {{app.currency}} <span class="text-xl font-medium">{{product.productCost * product.qty}}</span> 
+                                            </div>
+                                        </div>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                                <hr class="mt-2 pb-5" />
+                                <div class="w-full flex items-center text-md text-center ">
+                                    
+                                    <h1 class="flex-auto">Booking cost:<span class="font-bold text-red-600"> {{device.currentOrder.totalCost}}</span></h1>
+
+                                    <h1 class="flex-auto px-3">Products cost: <span class="font-bold text-red-600">{{ device.currentOrder.productsCost }}</span></h1>
+                                    
+                                    <h1 class="flex-auto text-md font-medium">Total cost: <span class="font-bold text-red-600">{{ device.currentOrder.totalCost + device.currentOrder.productsCost }}</span></h1>
+
+                                </div>
+                                <a href="{{app.CONF.url}}order_product/{{device.device.id}}" class="uppercase block text-center pt-3 pb-3 my-10 text-red-600 w-full rounded bg-gray-200 hover:bg-gray-400 hover:text-white">Add drink</a>
+
+                                <a data-ajax="true" data-confirm="true" data-request-id="{{device.device.id}}" data-request-type="endDeviceOrder" data-type="post" href="#!" class="uppercase block text-center pt-3 pb-3 mt-3 text-white w-full rounded bg-red-800 hover:bg-red-400 hover:text-white">Finish</a>
+
+                                {% endif  %}
+                            </div>
+
+                            <div class="px-8 py-2 shadow-2xl bg-white player-img text-center mb-5">
+                            </div>
+                        </div>
+                        <!-- End Main sidebar -->

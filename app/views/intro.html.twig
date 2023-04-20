@@ -1,0 +1,114 @@
+{% include 'views/includes/header.html.twig' %}
+<!-- main -->
+<main style="" class=" flex-1 overflow-x-hidden overflow-y-auto  ">
+    <div class="py-2 mt-1"></div>
+    <!-- today tab 1 -->
+    <!-- New releases -->
+    <div class="px-4 mb-20 py-4 rounded-lg shadow-lg bg-white dark:bg-gray-700 ">
+        <h1 class="font-bold text-lg ">{{title}}</h1>
+        <hr class="mt-2" />
+        <div class="row ">
+        </div>
+    </div>
+    <!-- END New releases -->
+    <div class="mx-auto max-w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 mb-4">
+            <div class="px-4 mb-10">
+                <div class="w-full bg-white rounded-xl overflow-hdden shadow-md p-4 undefined">
+                    <div class="flex flex-wrap border-b border-gray-200 undefined">
+                        <div class="bg-gradient-to-tr from-purple-500 to-purple-700 -mt-10 mb-4 rounded-xl text-white grid items-center w-24 h-24 py-4 px-4 justify-center shadow-lg-purple mb-0">SALES</div>
+                        <div class="w-full pl-4 max-w-full flex-grow flex-1 mb-2 text-right undefined">
+                            <h5 class="text-gray-500 font-light tracking-wide text-base mb-1">Sales</h5><span class="text-3xl text-gray-900">{{stats.getCostByMonth()}}</span>
+                        </div>
+                    </div>
+                    <div class="text-sm text-gray-700 pt-4 flex items-center undefined"><span class="font-light whitespace-nowrap">Since last month</span></div>
+                </div>
+            </div>
+            <div class="px-4 mb-10">
+                <div class="w-full bg-white rounded-xl overflow-hdden shadow-md p-4 undefined">
+                    <div class="flex flex-wrap border-b border-gray-200 undefined">
+                        <div class="bg-gradient-to-tr from-blue-500 to-blue-700 -mt-10 mb-4 rounded-xl text-white grid items-center w-24 h-24 py-4 px-4 justify-center shadow-lg-blue mb-0">ORDERS</div>
+                        <div class="w-full pl-4 max-w-full flex-grow flex-1 mb-2 text-right undefined">
+                            <h5 class="text-gray-500 font-light tracking-wide text-base mb-1">Orders </h5><span class="text-3xl text-gray-900">{{devicesOrderStats.getCountByMonth()}}</span>
+                        </div>
+                    </div>
+                    <div class="text-sm text-gray-700 pt-4 flex items-center undefined"><span class="font-light whitespace-nowrap">Since last month</span></div>
+                </div>
+            </div>
+            <div class="px-4 mb-10">
+                <div class="w-full bg-white rounded-xl overflow-hdden shadow-md p-4 undefined">
+                    <div class="flex flex-wrap border-b border-gray-200 undefined">
+                        <div class="bg-gradient-to-tr from-blue-500 to-blue-700 -mt-10 mb-4 rounded-xl text-white grid items-center w-24 h-24 py-4 px-4 justify-center shadow-lg-blue mb-0">Expenses</div>
+                        <div class="w-full pl-4 max-w-full flex-grow flex-1 mb-2 text-right undefined">
+                            <h5 class="text-gray-500 font-light tracking-wide text-base mb-1">Expenses</h5><span class="text-3xl text-gray-900">{{expensesStats.getCostByMonth()}}</span>
+                        </div>
+                    </div>
+                    <div class="text-sm text-gray-700 pt-4 flex items-center undefined"><span class="font-light whitespace-nowrap">Since last month</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 mb-4">
+            <div class="px-4 mb-14 xl:col-start-1 xl:col-end-4 ">
+                <div class="w-full bg-white rounded-xl overflow-hdden shadow-md p-4 undefined">
+                    <div class="bg-gradient-to-tr from-blue-500 to-blue-700 -mt-10 mb-4 rounded-xl text-white grid items-center w-full h-24 py-4 px-8  shadow-lg-blue undefined">
+                        <div class="w-full flex items-center justify-between">
+                            <h2 class="text-white text-2xl">Latest bookings</h2><a href="./orders" class="false flex items-center justify-center gap-1 font-bold outline-none uppercase tracking-wider focus:outline-none focus:shadow-none transition-all duration-300 rounded-lg py-3 px-7 text-sm leading-relaxed bg-transparent      undefined" style="padding: 0px;">See More</a>
+                        </div>
+                    </div>
+                    <div class="p-4 undefined">
+                        <div class="overflow-x-auto">
+                            <table class="items-center w-full bg-transparent border-collapse">
+                                <thead>
+                                    <tr>
+                                        <th class="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">ID</th>
+                                        <th class="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">Device</th>
+                                        <th class="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">Start time</th>
+                                        <th class="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">End time</th>
+                                        <th class="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">Cost</th>
+                                        <th class="px-1 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">Status</th>
+                                        <th class="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">Check</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for order in stats.getAll(7) %}
+                                    <tr>
+                                        <th class="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">{{order.id}}</th>
+                                        <td class="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">{{order.device.title}}</td>
+                                        <td class="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">{{order.startTime|date("m/d - H:i")}}</td>
+                                        <td class="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">{{order.endTime|date("m/d - H:i")}}</td>
+                                        <td class="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">{{order.cost}} {{app.currency}} </td>
+                                        <td class="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">  <span class="mx-1 w-2 h-2 rounded-xl bg-gray-300 {% if order.status == 'paid' %} bg-red-400 {% endif %} inline-block"></span> </td>
+                                        <td class="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left"><a class="text-red-600 font-medium"  href="{{app.CONF.url}}order/{{order.code}} ">Details</a></td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="xl:col-start-4 xl:col-end-6 px-4 mb-14">
+                <div class="w-full bg-white rounded-xl overflow-hdden shadow-md p-4 undefined">
+                    <div class="bg-gradient-to-tr from-pink-500 to-pink-700 -mt-10 mb-4 rounded-xl text-white grid items-center w-full h-24 py-4 px-8 justify-start shadow-lg-pink undefined">
+                        <h6 class="uppercase text-gray-200 text-xs font-medium">Overview</h6>
+                        <h2 class="text-white text-2xl">Sales value</h2>
+                    </div>
+                    <div class="p-4 undefined">
+                        <div class="relative h-96">
+                            <div class="chartjs-size-monitor">
+                                <div class="chartjs-size-monitor-expand">
+                                    <div class=""></div>
+                                </div>
+                                <div class="chartjs-size-monitor-shrink">
+                                    <div class=""></div>
+                                </div>
+                            </div><canvas id="bar-chart" width="316" height="384" style="display: block; width: 316px; height: 384px;" class="chartjs-render-monitor"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- end of main -->
+{% include 'views/includes/footer.html.twig' %}

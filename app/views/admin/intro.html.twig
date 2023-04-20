@@ -1,0 +1,264 @@
+{% include 'views/admin/includes/header.html.twig' %}
+<!-- main -->
+
+<main style="" class=" flex-1 overflow-x-hidden overflow-y-auto  ">
+    <div class="py-2 mt-1"></div>
+    <!-- today tab 1 -->
+    <!-- New releases -->
+    <div class="px-4  mb-20 py-4 rounded-lg shadow-lg bg-white dark:bg-gray-700 ">
+        <h1 class="font-bold text-lg ">{{title}}</h1>
+        <hr class="mt-2" />
+        <div class="row pt-10">
+            <div class="col-md-7">
+                <h2 class="font-medium text-xl ">Orders sales</h2>
+                <div id="chartdiv"></div>
+            </div>
+            <div class="col-md-5 pt-6">
+
+                <div class="mb-4">
+                    <div class="px-4 mb-10 block">
+                        <div class="w-full bg-white rounded-xl overflow-hdden shadow-md p-4 undefined">
+                            <div class="flex flex-wrap border-b border-gray-200 undefined">
+                                <div class="bg-gradient-to-tr from-purple-500 to-purple-700 -mt-10 mb-4 rounded-xl text-white grid items-center w-24 h-24 py-4 px-4 justify-center shadow-lg-purple mb-0">SALES</div>
+                                <div class="w-full pl-4 max-w-full flex-grow flex-1 mb-2 text-right undefined">
+                                    <h5 class="text-gray-500 font-light tracking-wide text-base mb-1">Sales</h5><span class="text-3xl text-gray-900">{{Order.getCostByMonth(app.providerSession.id)}}</span>
+                                </div>
+                            </div>
+                            <div class="text-sm text-gray-700 pt-4 flex items-center undefined"><span class="font-light whitespace-nowrap">Since last month</span></div>
+                        </div>
+                    </div>
+                    <div class="px-4 mb-10">
+                        <div class="w-full bg-white rounded-xl overflow-hdden shadow-md p-4 undefined">
+                            <div class="flex flex-wrap border-b border-gray-200 undefined">
+                                <div class="bg-gradient-to-tr from-blue-500 to-blue-700 -mt-10 mb-4 rounded-xl text-white grid items-center w-24 h-24 py-4 px-4 justify-center shadow-lg-blue mb-0">ORDERS</div>
+                                <div class="w-full pl-4 max-w-full flex-grow flex-1 mb-2 text-right undefined">
+                                    <h5 class="text-gray-500 font-light tracking-wide text-base mb-1">Orders </h5><span class="text-3xl text-gray-900">{{DevicesOrder.getCountByMonth(app.providerSession.id)}}</span>
+                                </div>
+                            </div>
+                            <div class="text-sm text-gray-700 pt-4 flex items-center undefined"><span class="font-light whitespace-nowrap">Since last month</span></div>
+                        </div>
+                    </div>
+                    <div class="px-4 mb-10">
+                        <div class="w-full bg-white rounded-xl overflow-hdden shadow-md p-4 undefined">
+                            <div class="flex flex-wrap border-b border-gray-200 undefined">
+                                <div class="bg-gradient-to-tr from-blue-500 to-blue-700 -mt-10 mb-4 rounded-xl text-white grid items-center w-24 h-24 py-4 px-4 justify-center shadow-lg-blue mb-0">Expenses</div>
+                                <div class="w-full pl-4 max-w-full flex-grow flex-1 mb-2 text-right undefined">
+                                    <h5 class="text-gray-500 font-light tracking-wide text-base mb-1">Expenses</h5><span class="text-3xl text-gray-900">{{expensesStats.getCostByMonth( app.providerSession.id )}}</span>
+                                </div>
+                            </div>
+                            <div class="text-sm text-gray-700 pt-4 flex items-center undefined"><span class="font-light whitespace-nowrap">Since last month</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END New releases -->
+    <div class="mx-auto max-w-full">
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 mb-4">
+            <div class="px-4 mb-14 xl:col-start-1 xl:col-end-4 ">
+                <div class="w-full bg-white rounded-xl overflow-hdden shadow-md p-4 undefined">
+                    <div class="bg-gradient-to-tr from-blue-500 to-blue-700 -mt-10 mb-4 rounded-xl text-white grid items-center w-full h-24 py-4 px-8  shadow-lg-blue undefined">
+                        <div class="w-full flex items-center justify-between">
+                            <h2 class="text-white text-2xl">Latest bookings</h2><a href="./orders" class="false flex items-center justify-center gap-1 font-bold outline-none uppercase tracking-wider focus:outline-none focus:shadow-none transition-all duration-300 rounded-lg py-3 px-7 text-sm leading-relaxed bg-transparent      undefined" style="padding: 0px;">See More</a>
+                        </div>
+                    </div>
+                    <div class="p-4 undefined">
+                        <div class="overflow-x-auto">
+                            <table class="items-center w-full bg-transparent border-collapse">
+                                <thead>
+                                    <tr>
+                                        <th class="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">ID</th>
+                                        <th class="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">Device</th>
+                                        <th class="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">Start time</th>
+                                        <th class="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">End time</th>
+                                        <th class="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">Cost</th>
+                                        <th class="px-1 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">Status</th>
+                                        <th class="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">Check</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for order in Order.getAll(app.providerSession.id, 10) %}
+                                    <tr>
+                                        <th class="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">{{order.id}}</th>
+                                        <td class="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">{{order.device.title}}</td>
+                                        <td class="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">{{order.startTime|date("m/d - H:i")}}</td>
+                                        <td class="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">{{order.endTime|date("m/d - H:i")}}</td>
+                                        <td class="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">{{order.cost}} {{app.currency}} </td>
+                                        <td class="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">  <span class="mx-1 w-2 h-2 rounded-xl bg-gray-300 {% if order.status == 'paid' %} bg-red-400 {% endif %} inline-block"></span> </td>
+                                        <td class="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left"><a class="text-red-600 font-medium"  href="{{app.CONF.url}}order/{{order.code}} ">Details</a></td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="xl:col-start-4 xl:col-end-6 px-4 mb-14">
+                <div class="w-full bg-white rounded-xl overflow-hdden shadow-md p-4 undefined">
+                    <div class="bg-gradient-to-tr from-pink-500 to-pink-700 -mt-10 mb-4 rounded-xl text-white grid items-center w-full h-24 py-4 px-8 justify-start shadow-lg-pink undefined">
+                        <h6 class="uppercase text-gray-200 text-xs font-medium">Overview</h6>
+                        <h2 class="text-white text-2xl">Products Sales value</h2>
+                    </div>
+                    <div class="p-4 undefined">
+                        <h2 class="font-medium text-xl ">Products sales</h2>
+                        <div class="relative ">
+                            <div id="chartdiv2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full mt-10 bg-white rounded-xl overflow-hdden shadow-md p-4 undefined">
+                    <div class="bg-gradient-to-tr from-pink-500 to-pink-700 -mt-10 mb-4 rounded-xl text-white grid items-center w-full h-24 py-4 px-8 justify-start shadow-lg-pink undefined">
+                        <h6 class="uppercase text-gray-200 text-xs font-medium">Overview</h6>
+                        <h2 class="text-white text-2xl">Products orders</h2>
+                    </div>
+
+                    <h3 class="font-medium text-xl ">Latest ordered Products </h2>
+                    <table class="items-center w-full bg-transparent border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">Item</th>
+                                <th class="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">Cost</th>
+                                <th class="px-1 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">Qty</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in ProductOrder.getAll(app.providerSession.id, 10) %}
+                            <tr>
+                                <th class="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">{{order.product.title}}</th>
+                                <th class="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">{{order.id}}</th>
+                                <th class="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">{{order.id}}</th>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- end of main -->
+
+
+
+<style>#chartdiv, #chartdiv2 {width: 100%;height: 500px; margin: 10px 0;}</style>
+
+<!-- Resources -->
+<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
+<!-- Chart code -->
+<script>
+
+am4core.ready(function() {
+
+    // Themes begin
+    am4core.useTheme(am4themes_animated);
+    // Themes end
+
+    // Create chart instance
+    var chart = am4core.create("chartdiv", am4charts.XYChart);
+
+    // Add data
+    var data =  '{{ app.chartsOrders | json_encode()  }}'.replaceAll('&quot;', '"');
+    chart.data = JSON.parse(data);
+
+    // Create axes
+    var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+    dateAxis.renderer.grid.template.location = 0;
+    dateAxis.renderer.minGridDistance = 50;
+
+    var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+
+    // Create series
+    var series = chart.series.push(new am4charts.LineSeries());
+    series.dataFields.valueY = "value";
+    series.dataFields.dateX = "date";
+    series.strokeWidth = 3;
+    series.fillOpacity = 0.5;
+
+    // Add vertical scrollbar
+    chart.scrollbarY = new am4core.Scrollbar();
+    chart.scrollbarY.marginLeft = 0;
+
+    // Add cursor
+    chart.cursor = new am4charts.XYCursor();
+    chart.cursor.behavior = "zoomY";
+    chart.cursor.lineX.disabled = true;
+
+
+
+    // Themes begin
+    am4core.useTheme(am4themes_animated);
+    // Themes end
+
+    // Create chart instance
+    var chart = am4core.create("chartdiv2", am4charts.RadarChart);
+    chart.scrollbarX = new am4core.Scrollbar();
+
+
+    var data =  '{{ app.chartsProductOrder | json_encode()  }}'.replaceAll('&quot;', '"');
+    chart.data = JSON.parse(data);
+    chart.radius = am4core.percent(100);
+    chart.innerRadius = am4core.percent(50);
+
+    // Create axes
+    var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+    categoryAxis.dataFields.category = "category";
+    categoryAxis.renderer.grid.template.location = 0;
+    categoryAxis.renderer.minGridDistance = 30;
+    categoryAxis.tooltip.disabled = true;
+    categoryAxis.renderer.minHeight = 110;
+    categoryAxis.renderer.grid.template.disabled = true;
+    //categoryAxis.renderer.labels.template.disabled = true;
+    let labelTemplate = categoryAxis.renderer.labels.template;
+    labelTemplate.radius = am4core.percent(-60);
+    labelTemplate.location = 0.5;
+    labelTemplate.relativeRotation = 90;
+
+    var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+    valueAxis.renderer.grid.template.disabled = true;
+    valueAxis.renderer.labels.template.disabled = true;
+    valueAxis.tooltip.disabled = true;
+
+    // Create series
+    var series = chart.series.push(new am4charts.RadarColumnSeries());
+    series.sequencedInterpolation = true;
+    series.dataFields.valueY = "value";
+    series.dataFields.categoryX = "category";
+    series.columns.template.strokeWidth = 0;
+    series.tooltipText = "{valueY}";
+    series.columns.template.radarColumn.cornerRadius = 10;
+    series.columns.template.radarColumn.innerCornerRadius = 0;
+
+    series.tooltip.pointerOrientation = "vertical";
+
+    // on hover, make corner radiuses bigger
+    let hoverState = series.columns.template.radarColumn.states.create("hover");
+    hoverState.properties.cornerRadius = 0;
+    hoverState.properties.fillOpacity = 1;
+
+
+    series.columns.template.adapter.add("fill", function(fill, target) {
+      return chart.colors.getIndex(target.dataItem.index);
+    })
+
+    // Cursor
+    chart.cursor = new am4charts.RadarCursor();
+    chart.cursor.innerRadius = am4core.percent(50);
+    chart.cursor.lineY.disabled = true;
+
+}); // end am4core.ready()
+
+
+
+
+
+</script>
+
+
+{% include 'views/admin/includes/footer.html.twig' %}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Medians PS Management System</title>
+    <link rel="stylesheet" type="text/css" href="{{app.CONF.url}}assets/tailwind.min.css">
+    <link rel="stylesheet" type="text/css" href="{{app.CONF.url}}assets/bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="{{app.CONF.url}}assets/style.css">
+    <link rel="stylesheet" type="text/css" href="{{app.CONF.url}}assets/alertify/alertify.min.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp">
+
+    <style>
+        .bg-orange{
+  background: #fc5a03;
+}
+.text-orange{
+  color: #fc5a03;
+}
+.border-orange{
+  border-color: #fc5a03;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+   --tw-divide-opacity: 1;
+  border-color: rgba(209, 213, 219, var(--tw-divide-opacity));
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+   --tw-divide-opacity: 1;
+  border-color: rgba(209, 213, 219, var(--tw-divide-opacity));
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+   --tw-divide-opacity: 1;
+  border-color: rgba(209, 213, 219, var(--tw-divide-opacity));
+}
+
+    </style>
+
+    <script type="text/javascript" src="{{app.CONF.url}}assets/js/jquery-3.5.1.min.js"></script>
+
+</head>
+
+<body>
+    <div class=" ">
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+        <!-- component -->
+        <nav id="header" class=" w-full z-30 block lg:hidden  bg-white shadow-lg border-b border-gray-300 ">
+            <div class="w-full flex items-center justify-between mt-0 px-6 py-0">
+                <div class=" md:flex md:items-center md:w-auto w-full order-3 md:order-1" id="menu">
+                    <nav>
+                        <div class="inline-flex">
+                            <!-- Logo -->
+                            <div class="mx-auto h-16  pt-4 w-auto pr-10">
+                                <img style="max-height: 100%" src="{{app.CONF.url}}assets/img/Logo.png" height="40">
+                                <!--end logo -->
+                            </div>
+                        </div>
+                        <div class="inline-flex">
+                            <ul class="md:flex items-center justify-center text-base text-gray-400  md:pt-0">
+                                <li>
+                                    <a href="#!" class="ToggleItem" data-toggle-target="#side-navbar" data-toggle-class="openmenu">Mednu</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </nav>
+        <div x-data="{ sidebarOpen: false, darkMode: false }" :class="{ 'dark': darkMode }">
+            <div class="flex bg-gray-100 dark:bg-gray-800 font-roboto">
+                <div :class="sidebarOpen ? 'block' : 'hidden'" @click="sidebarOpen = false" class="fixed z-20 inset-0 bg-black opacity-50 transition-opacity lg:hidden"></div>
+                <div class="flex w-full items-start justify-between">
+                    <div id="side-navbar" class="h-screen hidden lg:block my-4 ml-4 shadow-lg relative w-60">
+                        <div class="bg-white h-full rounded-2xl dark:bg-gray-700">
+                            <div class="flex items-center justify-center pt-6">
+                                <img src="{{app.CONF.url}}assets/img/Logo.png" width="80" height="80">
+                            </div>
+                            <nav class="mt-6">
+                                <div>
+                                    {% for menu in app.menuList %}
+                                    <a class="w-full font-thin uppercase flex items-center p-4 my-2 transition-colors duration-200 justify-start text-gray-500 dark:text-gray-200  dark:from-gray-700 dark:to-gray-800 {% if menu.link == app.currentPage %}  hover:text-blue-800 bg-gradient-to-r from-white  text-blue-500  border-blue-500 to-blue-100  border-r-4 {% endif %} " href="{{app.CONF.url}}{{menu.link|slice(1)}}">
+                                        <span class="text-left">
+                                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 2048 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1070 1178l306-564h-654l-306 564h654zm722-282q0 182-71 348t-191 286-286 191-348 71-348-71-286-191-191-286-71-348 71-348 191-286 286-191 348-71 348 71 286 191 191 286 71 348z"></path></svg>
+                                        </span>
+                                        <span class="mx-4 text-sm font-normal"> {{menu.title}}  </span>
+                                    </a>
+                                    {% endfor %}
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="h-screen  flex-1 flex flex-col overflow-hidden  p-4 pb-0 " style="height: 100vh">
+                        <header style="display: none;" class="justify-between items-center w-full shadow-lg bg-white dark:bg-gray-700 items-center h-16 rounded-2xl z-40">
+                            <div class="relative z-20 flex flex-col justify-center h-full px-3 mx-auto flex-center">
+                                <div class="relative items-center pl-1 flex w-full lg:max-w-68 sm:pr-2 sm:ml-0">
+                                    <div class="container relative left-0 z-50 flex w-3/4 h-auto h-full">
+                                        <div class="relative flex items-center w-full lg:w-64 h-full group">
+                                            <div class="absolute z-50 flex items-center justify-center block w-auto h-10 p-3 pr-2 text-sm text-gray-500 uppercase cursor-pointer sm:hidden">
+                                                <svg fill="none" class="relative w-5 h-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <svg class="absolute left-0 z-20 hidden w-4 h-4 ml-4 text-gray-500 pointer-events-none fill-current group-hover:text-gray-400 sm:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                                <path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z">
+                                                </path>
+                                            </svg>
+                                            <input type="text" class="block w-full py-1.5 pl-10 pr-4 leading-normal rounded-2xl focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 ring-opacity-90 bg-gray-100 dark:bg-gray-800 text-gray-400 aa-input" placeholder="Search">
+                                            <div class="absolute right-0 hidden h-auto px-2 py-1 mr-2 text-xs text-gray-400 border border-gray-300 rounded-2xl md:block">
+                                                +
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="relative inline-block">
+                                          <svg class="w-6 h-6 text-gray-700 fill-current" viewBox="0 0 20 20"><path d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                                          <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full">99</span>
+                                        </span>
+                                        <span class="relative inline-block ml-8">
+                                          <svg class="w-6 h-6 text-gray-700 fill-current" viewBox="0 0 20 20"><path d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                                          <span class="absolute top-0 right-0 inline-block w-2 h-2 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full"></span>
+                                    </span>
+                                    <div class="relative p-1 flex items-center justify-end ml-5 mr-4 sm:mr-0 sm:right-auto">
+                                        <a href="#" class="block relative">
+                                            <img alt="profil" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80" class="mx-auto object-cover rounded-full h-10 w-10 ">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </header>

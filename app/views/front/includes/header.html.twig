@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--====== USEFULL META ======-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="App Landing Business Template">
+    <meta name="keywords" content="Landing, Business, Onepage, Html, Business, Apps, Apps Landing">
+
+    <!-- <meta name="robots" content="noindex" /> -->
+    <title>{{title}}</title>
+    <meta name="description" content="Medians is an agency that builds online business with Website or Mobile application is simple.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Google Fonts -->
+    <!-- <script src="webfont.js"></script> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Cairo:wght@200;600;700;800&family=Fjalla+One&family=Noto+Sans:wght@100;200;300;400;500&family=Titillium+Web:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Assets -->
+    <link href="{{app.CONF.url}}website_assets/css/tailwind.css" rel="stylesheet">
+    <link href="{{app.CONF.url}}website_assets/css/theme.css" rel="stylesheet">
+    <link href="{{app.CONF.url}}website_assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- <link href="../../assets/css/responsive.css" rel="stylesheet">   -->
+    <!-- Javascript Assets -->
+    <script src="{{app.CONF.url}}website_assets/js/jquery.min.js"></script>
+    <!-- OWL Carousel -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N17SHZVQDX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-N17SHZVQDX');
+    </script>
+
+    <style id="theia-sticky-sidebar-stylesheet-TSS">.theiaStickySidebar:after {content: "";display: table;clear: both;}</style>
+
+    <link rel="canonical" href="{{app.CONF.url}}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{app.CONF.url}}">
+    <meta property="og:title" content="Medians PS System">
+    <meta property="og:image" content="{{app.CONF.url}}0front_assets/img/cover.jpg">
+    <meta property="og:description" content="">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Medians PS System">
+    <meta property="twitter:image" content="{{app.CONF.url}}0front_assets/img/cover.jpg">
+    <meta property="twitter:description" content="">
+    
+
+    <!-- PushAlert 
+    <script type="text/javascript">
+            (function(d, t) {
+                    var g = d.createElement(t),
+                    s = d.getElementsByTagName(t)[0];
+                    g.src = "https://cdn.pushalert.co/integrate_aceadadec3f94105947a599615de5558.js";
+                    s.parentNode.insertBefore(g, s);
+            }(document, "script"));
+    </script>
+     End PushAlert -->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- <script src="https://unpkg.com/v-tag-input@0.0.3/dist/v-tag-input.js"></script> -->
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.4.0/annyang.min.js"></script>
+
+    <script type="text/javascript">
+        var rootURL = '{{app.CONF.url}}';
+        var imgURL = rootURL+'image.php?w=400&h=400&img=pic&src=';
+    </script>
+
+
+
+</head>
+
+<body class="bg-black ">
+    <div id="web-container" class="w-full overflow-hidden">
+        
+        <header class="flex w-full relative" style="z-index: 9; ">
+            <div class="container py-4 flex w-full">
+                <div class="w-full ">
+                    <img src="{{app.CONF.url}}website_assets/img/white-logo.png" width="100" />
+                </div>
+                <ul class=" text-white flex mt-4  pt-3  gap-3">
+                    <li><a class="text-white" href="{{app.CONF.url}}"> HOME</a></li>
+                    <li><a class="text-white" href="{{app.CONF.url}}pages/services"> SERVICES</a></li>
+                    <!-- <li><a class="text-white" href="./portfolio.html"> PORTFOLIO</a></li> -->
+                    <li><a class="text-white" href="{{app.CONF.url}}pages/products"> PRODUCTS</a></li>
+                    <li><a class="text-white" href="{{app.CONF.url}}pages/about-us"> ABOUT</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <div class="w-full absolute">
+           <div class="content">
+              <div id="large-header" class="large-header">
+                 <canvas id="demo-canvas" class="" style="height: 100vh;"></canvas>
+              </div>
+           </div>
+        </div>

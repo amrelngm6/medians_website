@@ -1,0 +1,30 @@
+
+                        <!-- Main player -->
+                        <div class="main-sidebar show  p-6 shadow-lg  bg-white fixed rounded right-4 bottom-0 shadow-2xl  transform transition duration-400">
+
+                            <div class="relative overflow-y-auto h-auto" style="max-height: 90vh; overflow: auto;">
+                                <a href="#!" class="ToggleItem float-right" data-toggle-target=".main-sidebar" data-toggle-class="activate">X</a>
+                                <form action="{{formAction}}" method="POST" data-refresh="1" id="add-device-form" class="action p-8 py-0 m-auto rounded-lg max-w-xl pb-10">
+                                    <h1 class="m-auto max-w-xl text-2xl mb-10 text-center">{{title}}</h1>
+                                    <input name="type"  type="hidden" value="add_device" > 
+                                    <input name="params[title]" required="" type="text" class="h-12 mt-3 rounded w-full border px-3 text-gray-700  focus:border-blue-100 dark:bg-gray-800  dark:border-gray-600" placeholder="Device Title"> 
+
+                                    <select name="params[type]" required="" class="h-12 mt-3 rounded w-full border px-3 text-gray-700  focus:border-blue-100 dark:bg-gray-800  dark:border-gray-600" placeholder="">
+                                    {% for type in typesList %}
+                                    <option value="{{type.id()}}">{{type.title()}}</option>
+                                    {% endfor %}
+                                    </select>
+                                    
+                                    
+                                    <button class="uppercase h-12 mt-3 text-white w-full rounded bg-red-700 hover:bg-red-800">Save</button>
+                                </form>
+
+                            </div>
+
+                            <div class="p-8 py-2 shadow-2xl bg-white player-img text-center mb-20">
+                            </div>
+                        </div>
+                        <!-- End Main player -->
+                        <script type="text/javascript">
+
+                        </script>

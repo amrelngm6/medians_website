@@ -1,0 +1,48 @@
+{% include 'views/admin/includes/header.html.twig' %}
+    <!-- main -->
+    <main style="" class=" flex-1 overflow-x-hidden overflow-y-auto  ">
+        <div class="py-2 mt-1"></div>
+
+        <div class="px-4 mb-6 py-4 rounded-lg shadow-lg bg-white dark:bg-gray-700 ">
+            <h1 class="font-bold text-lg ">{{title}}</h1>
+            <hr class="mt-2 pb-10" />
+            
+            <div id="invoice-page">
+
+
+                <div class="p-2 lg:px-8 bg-white dark:bg-gray-700 rounded-lg  flex-auto">
+
+                    <form action="{{formAction}}" method="POST" data-refresh="1" id="add-device-form" class="action p-8 py-0 m-auto rounded-lg max-w-xl pb-10">
+                        <h1 class="m-auto max-w-xl text-2xl mb-10 text-center">{{title}}</h1>
+                        <input name="type"  type="hidden" value="edit_product" > 
+                        <input name="params[id]"  type="hidden" value="{{product.id}}" > 
+                        <input name="params[title]" required="" type="text" class="h-12 mt-3 rounded w-full border px-3 text-gray-700  focus:border-blue-100 dark:bg-gray-800  dark:border-gray-600" placeholder="Device Title" value="{{product.title}}"> 
+                        <input name="params[price]" required="" type="number" class="h-12 mt-3 rounded w-full border px-3 text-gray-700  focus:border-blue-100 dark:bg-gray-800  dark:border-gray-600" placeholder="Device price" value="{{product.price}}"> 
+
+                        <textarea name="params[description]" required="" class="h-12 mt-3 rounded w-full border px-3 text-gray-700  focus:border-blue-100 dark:bg-gray-800  dark:border-gray-600" placeholder="Device description" >{{product.description}}</textarea> 
+
+                        <select name="params[type]" required="" class="h-12 mt-3 rounded w-full border px-3 text-gray-700  focus:border-blue-100 dark:bg-gray-800  dark:border-gray-600" placeholder="">
+                            <option value="0">Default</option>
+                            {% for type in typesList %}
+                            <option {% if type.publish == 1 %} selected="" {% endif %} value="{{type.id}}">{{type.title()}}</option>
+                            {% endfor %}
+                        </select>
+
+                        <label class="inline-flex items-center mt-3">
+                            <input name="params[publish]" type="checkbox" class="form-checkbox h-5 w-5 text-orange-600" {% if product.publish == 1 %} checked  {% endif %}><span class="ml-2 text-gray-700">publish</span>
+                        </label>
+                        
+                        <button class="uppercase h-12 mt-3 text-white w-full rounded bg-red-700 hover:bg-red-800">Save</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+    
+    <!-- end of main -->
+    <div id="main-forms-container">
+    </div>
+
+{% include 'views/admin/includes/footer.html.twig' %}

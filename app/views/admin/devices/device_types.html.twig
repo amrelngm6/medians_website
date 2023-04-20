@@ -1,0 +1,37 @@
+{% include 'views/admin/includes/header.html.twig' %}
+
+
+                        <!-- main -->
+                        <main style="" class=" flex-1 overflow-x-hidden overflow-y-auto  ">
+
+                            <div class="py-2 mt-1"></div>
+                            <!-- today tab 1 -->
+                            <!-- New releases -->
+                            <div class="px-4 mb-6 py-4 rounded-lg shadow-lg bg-white dark:bg-gray-700 ">
+                                <a href="#!" class="ToggleItem float-right border-gray-400 bordered border  px-5 py-1"  data-toggle-target=".main-sidebar" data-toggle-class="activate">Add new </a>
+                                <h1 class="font-bold text-lg ">{{title}}</h1>
+
+                                <hr class="mt-2" />
+                                <div class="row ">
+
+                                {% for devicetype in typesList %}
+                                        <div class="col-md-4">
+
+                                            <div class="event" style="background-size: cover; background-image: url({{app.CONF.url}}assets/img/ps.png)">
+                                                <h3 class="event__title"><a data-ajax="true" href="{{app.CONF.url}}device_type/{{devicetype.id}}"  class=" text-2xl text-red-600 font-bold">{{devicetype.title}}</a></h3>
+                                            </div>
+                                        </div>
+
+								    {% endfor %}
+                                </div>
+                            </div>
+                            <!-- END New releases -->
+
+                        </main>
+                        <!-- end of main -->
+
+<div id="main-forms-container">
+{% include 'views/admin/forms/add_device_type.html.twig' %}
+</div>
+
+{% include 'views/admin/includes/footer.html.twig' %}
