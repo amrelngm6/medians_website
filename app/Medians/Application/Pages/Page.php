@@ -50,6 +50,7 @@ class Page
 	    return  $twig->render('views/front/home.html.twig', [
 	        'title' => $this->Page->name,
 	        'page' => $this->Page,
+	        'year' => date('Y'),
 	        'app' => $app,
 	    ]);
 
@@ -71,6 +72,7 @@ class Page
 		    return $twig->render('views/front/pages/index.html.twig', [
 		        'title' => $this->Page->name,
 		        'page' => $this->Page,
+		        'year' => date('Y'),
 		        'app' => $app,
 		    ]);
 		}
