@@ -1,0 +1,27 @@
+
+        <div class="container mx-auto relative z-10  px-1">
+        
+            <div class="title-gradient rounded-lg py-2 mt-12 my-2 pl-40 pr-6 purple-color font-semibold text-xl " style="width: max-content;">
+                {{catTitle}}
+            </div>
+
+            <div class="custom-scroll-container custom-scroll container grid mx-auto relative z-10 " >
+                <div class="custom-scroll-list block lg:grid my-4 lg:grid-cols-2 gap gap-3 lg:gap-0 sm:grid-cols-2 w-full ">
+                    {% for item in catItemsList %}
+                    <div class=" relative custom-scroll-item blog-main-item lg:flex block w-full ">
+                        <div class="blog-item-img lg:w-5/12">
+                            <img width="350" height="232" loading="lazy" src="/stream?image={{item.photo}}" class="rounded-lg rounded w-full my-2 lg:my-4" alt="{{item.content.title}}">
+                        </div>
+                        <div class="blog-item-content lg:w-7/12">
+                            <div class="py-2 lg:py-6 lg:pr-6 lg:px-10 px-2">
+                                <a href="{{item.content.prefix}}" class="block  font-semibold text-sm cyan-color">{{item.updated_at|date('Y-m-d')}}</a>
+                                <a href="{{item.content.prefix}}" class="py-2 block font-bold purple-color lg:text-xl text-base">{{item.content.title}}</a>
+                                <p class=" font-semibold text-gray-600 lg:text-base text-sm">{{item.content.content|striptags|raw|slice(0,180)|raw}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor  %}
+                </div>
+            </div>
+
+        </div>

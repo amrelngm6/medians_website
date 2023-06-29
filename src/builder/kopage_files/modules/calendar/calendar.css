@@ -1,0 +1,418 @@
+/* version 4+ styles, start. */
+
+/*
+#admin #calendar .well{background:none}
+#admin #calendar .well a{margin-top:-10px}
+*/
+
+#admin #calendar .well{text-align:center;}
+#admin #calendar .well a{font-weight:800;color:var(--kopageColor_LeftMenu);line-height:40px}
+
+#contentArea #calendar a {text-decoration: none; }
+#contentArea #calendar .well {margin:0 0 50px;border:0;border-radius:4px;text-align:center;line-height:40px;background:none;}
+#contentArea #calendar .well h4 {font-size:26px;}
+
+ /*style='color:#fff;width:auto'
+
+ color:#fff;font-size:30px;line-height:40px*/
+
+
+/* version 3+ styles, start. */
+
+/*
+
+#calendar th {text-align:center;color:#fff;}
+#calendar .table,#calendar tr,#calendar td,#calendar th {border:0;}
+#calendar .day,#calendar .dayToday {text-align:center}
+#calendar td {padding:0;text-align:center;}
+
+*/
+
+.keditLayout_1 #calendar {background:white;}
+
+#calendar thead tr {border:0;margin-bottom:4px}
+#calendar th {border:0;background:rgba(0,0,0,0);padding:0.75px}
+/*#calendar th:first-of-type {border-radius:5px 0 0 5px;}
+#calendar th:last-of-type {border-radius: 0 5px 5px 0;}*/
+
+
+#calendar .table th{ overflow: hidden;max-width: 3ch;
+    text-align: center;
+}
+#admin th span{background:var(--kopageColor_Accent);color:#fff;display:block;border-radius:3px;padding:5px;}
+
+
+#calendar td {
+
+    width: 14.2857%;
+  position: relative;padding:0;
+ /*border:1px solid rgba(0,0,0,1);
+  padding:0;;width: 14.2857%;
+  position: relative;
+  text-align:center;
+  border:1px solid rgba(0,0,0,1);*/
+
+
+}
+
+#calendar td {border:0;}
+.day,.dayToday{margin:1px;border-radius:4px;}
+#calendar td .day,#calendar td .dayToday{display:block;text-align:center;}
+
+#admin .day a,#admin .dayToday a{
+background: var(--kopageColor_AccentLight);color:var(--kopageColor_Accent);;
+display:block;
+}
+#admin .day a,#admin .dayToday a{}
+
+
+
+
+
+/*.day a, .dayToday a{display:block;background:rgba(0,0,0,0.1);line-height:30px;}*/
+
+.dayEventList{
+padding:5px;line-height:1.1;
+  }
+
+  .day a,.dayToday a{
+  border-radius:4px 4px 0 0 ;
+    }
+.dayEventList{}
+
+
+    .DayEventsSeparator {
+    display:block;
+    background:#FFFFFF;
+    height:10px;
+    line-height:10px;
+    font-size:1px;
+    }
+    #admin .dayEventList {
+     display:flex; justify-content:space-around;background:#fff;border-radius:0 0 4px 4px;
+     }
+     .dayEventList {
+      display:flex; justify-content:center;
+      }
+    .dayHighlight {
+    background: #FFCCFF;
+    display:block;
+    }
+
+    #calendar a.dayEventList { height:15px;width:15px;border-radius:15px;;margin:0; display:inline-block;background:var(--kopageColor_Accent);margin:0 5px;}
+    #contentArea #calendar a.dayEventList {background:var(--color1);}
+    #contentArea #calendar a.dayEventList.dayHighlight {box-shadow: 0 0 0 2px whitesmoke,0 0 0 4px var(--color1);}
+
+
+
+#calendar td:not(.dayOver):after {
+
+    /*
+  content: '';
+  display:flex;align-items: center;justify-content:center;
+  padding-top: 100%; background:tomato; pos
+
+  */
+
+}
+/*
+#calendar td a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;display:flex;align-items: center;justify-content:center;
+  background:#fff; color:#444; border-radius:4px; transition:0.2s all;border:1px solid rgba(255,255,255,0)
+}*/
+
+
+/*#calendar td a:hover {background-color:var(--kopageColor_Accent)}*/
+
+
+/*
+
+#calendar .day a,#calendar .dayToday a{line-height:70px;;display:block; font-size:20px }
+#calendar .day a:hover{background:#eee}
+
+*/
+
+/*    text-align: right;
+    display: block;
+    background: #CCC none repeat scroll 0% 0%;
+    font-weight: bold;
+    border-bottom: 1px solid #999;*/
+
+/*Main style - layout*/
+#calback {
+	margin: 0;
+	width: 100%
+}
+
+/*
+@media (max-width: 850px){
+#calendar .table th{ overflow: hidden;max-width: 3ch;}
+#website #calendar .table .dayEventList{overflow:hidden;width:100%;text-indent:-99999px;background: #CCC}
+}
+
+
+
+#calendar {
+	width: 100%;
+	height: 100%;
+	text-indent:0;
+	white-space:normal;
+	line-height:normal;
+
+}
+
+.cal {
+	width: 100%;
+}
+*/
+
+/*Header Style*/
+#calendarHead {
+
+}
+#calendarHead a:link,#calendarHead a:visited {
+text-decoration:none;
+color:#FFFFFF;
+font-size: 24px;
+display: block;
+text-align: center;
+font-weight: bold;
+}
+
+.calhead img { /*images in header - right and left arrow*/
+	border: none;
+	padding:10px 5px 10px 5px;
+}
+
+
+
+/*Calendar days start*/
+
+/*Days of Week*/
+
+/*
+.dayhead td {
+	height: 25px;
+	background: #EEE;
+	font-size: 11px;
+	line-height:25px;
+	text-align: center;
+	color: #000;
+}
+*/
+
+/*Days cells*/
+
+/*day bg - to be not transparent*/
+.dayrow {
+/*	background: #FFF;
+	height: 70px;
+	font-size: 11px;*/
+}
+
+
+
+
+
+.dayrow a{ text-decoration:none;
+}
+
+
+
+
+#calViewhead {
+
+}
+
+#dayViewhead {
+
+	height: 25px;
+	background: #EEE;
+	font-size: 16px;
+	line-height:25px;
+	text-align: center;
+	color: #000;
+	padding:5px;
+
+
+}
+
+
+#dayViewrow,#dayViewfoot {
+	background: #FFF;
+
+	font-size: 11px;
+	padding:10px 5px 25px 5px;
+	border-top:1px solid #999999;
+	display:block;
+	color:#000000;
+
+}
+#dayViewfoot {
+	background: #6E6E6E;
+	padding:5px 5px 5px 5px;
+}
+#dayViewfoot img {
+	border: 0;
+	padding-right: 5px;
+}
+#dayViewfoot a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+/*
+.dayEventList a:link, .dayEventList a:visited,
+.dayHighlight a:link, .dayHighlight a:visited {
+text-decoration:none;line-height:1;
+color:#000000;
+	display:block;
+	padding:5px;
+	margin-bottom:1px;
+}
+
+.dayEventList a:hover, .dayHighlight a:hover {
+	background: #CCC;
+}
+*/
+.dayOver {
+	/*background: #EEE;*/
+}
+
+
+
+.dayout {
+	background: #FFF;
+}
+
+
+
+
+
+
+/*popup style*/
+
+
+table.jCalendar {
+	border: 1px solid #000;
+	background: #aaa;
+    border-collapse: separate;
+    border-spacing: 2px;
+	font-size:11px;
+}
+table.jCalendar th {
+	background: #333;
+	color: #fff;
+	font-weight: bold;
+	padding: 3px 5px;
+}
+table.jCalendar td {
+	background: #ccc;
+	color: #000;
+	padding: 3px 5px;
+	text-align: center;
+}
+table.jCalendar td.other-month {
+	background: #ddd;
+	color: #aaa;
+}
+table.jCalendar td.today {
+	background: #666;
+	color: #fff;
+}
+table.jCalendar td.selected {
+	background: #f66;
+	color: #fff;
+}
+table.jCalendar td.selected:hover {
+	background: #f33;
+	color: #fff;
+}
+table.jCalendar td:hover, table.jCalendar td.dp-hover {
+	background: #fff;
+	color: #000;
+}
+table.jCalendar td.disabled, table.jCalendar td.disabled:hover {
+	background: #bbb;
+	color: #888;
+}
+
+
+
+
+/* For the popup */
+
+/* NOTE - you will probably want to style a.dp-choose-date - see how I did it in demo.css */
+
+div.dp-popup {
+	position: relative;
+	background: #ccc;
+	font-size: 10px;
+	font-family: arial, sans-serif;
+	padding: 2px;
+	width: 171px;
+	line-height: 1.2em;
+}
+div#dp-popup {
+	position: absolute;
+	z-index: 199;
+}
+div.dp-popup h2 {
+	font-size: 12px;
+	text-align: center;
+	margin: 2px 0;
+	padding: 0;
+}
+a#dp-close {
+	font-size: 11px;
+	padding: 4px 0;
+	text-align: center;
+	display: block;
+}
+a#dp-close:hover {
+
+}
+div.dp-popup a {
+	color: #000;
+	text-decoration: none;
+	padding: 3px 2px 0;
+}
+div.dp-popup div.dp-nav-prev {
+	position: absolute;
+	top: 2px;
+	left: 4px;
+	width: 100px;
+}
+div.dp-popup div.dp-nav-prev a {
+	float: left;
+}
+/* Opera needs the rules to be this specific otherwise it doesn't change the cursor back to pointer after you have disabled and re-enabled a link */
+div.dp-popup div.dp-nav-prev a, div.dp-popup div.dp-nav-next a {
+	cursor: pointer;
+}
+div.dp-popup div.dp-nav-prev a.disabled, div.dp-popup div.dp-nav-next a.disabled {
+	cursor: default;
+}
+div.dp-popup div.dp-nav-next {
+	position: absolute;
+	top: 2px;
+	right: 4px;
+	width: 100px;
+}
+div.dp-popup div.dp-nav-next a {
+	float: right;
+}
+div.dp-popup a.disabled {
+	cursor: default;
+	color: #aaa;
+}
+div.dp-popup td {
+	cursor: pointer;
+}
+div.dp-popup td.disabled {
+	cursor: default;
+}

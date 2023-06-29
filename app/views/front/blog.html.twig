@@ -1,0 +1,130 @@
+{% include 'views/front/includes/header.html.twig' %}
+    
+{% include 'views/front/includes/navbar.html.twig' %}
+    
+
+    <div class="w-full cyan-bg pb-6 pt-2 relative ">
+        <div class="w-full overflow-hidden h-full absolute bottom-0 left-0">        
+            <img loading="lazy"  alt="{{app.settings['sitename']}}" src="/stream?image=/uploads/img/light-network.webp" class="absolute left-0 top-0 w-full" style="opacity: .3;" />
+        </div>
+        <div class="container mx-auto relative">
+            <h1 class="text-2xl mx-auto w-32 text-center font-bold purple-color" >{{lang.__('blog')}}</h1>
+            <div class="mx-auto w-80 my-0 relative z-10">
+                <form class="absolute top-0  left-0 right-0 mx-auto">
+                    <input name="search" class="border-1 runded border border-1 border-gray-200 w-full text-sm rounded-2xl bg-white px-4 py-3" placeholder="{{lang.__('SEARCH_PLACEHOLDER')}}" value="{{search_text}}">
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="blog-content mt-2">
+
+        {% if search_text %}
+
+        <div class="cairo mx-auto  pt-10   purple-color font-semibold text-2xl mx-auto text-center w-72">
+            {{lang.__('SEARCH_RESULT')}}
+            <span class="mx-auto my-4 w-20 border border-b-1  border-gray-300 block"></span>
+        </div>
+        {% if search_items|length %} 
+        <div class="custom-scroll-container mb-10 custom-scroll relative z-10 overflow-x-auto">
+            <div style="min-width: {{ 460 * items|length}}px;"   class="custom-scroll-list w-full flex gap-3 gap px-1 ">
+                {% for item in search_items %}
+                <div style="min-width:250px;" class="relative custom-scroll-item w-full lg:h-full h-auto my-2 rounded-xl overflow-hidden">
+                    <a href="/{{item.content.prefix}}"><img width="350" height="232" src="/stream?image={{item.picture}}" alt="{{item.content.title}}" class="rounded-lg w-full h-64" /></a>  
+                    <div class="shadow w-full h-full left-0 top-0 absolute z-10 rounder-lg"></div>
+                    <div class="w-full absolute  left-0 bottom-8 hover:bottom-10 px-8 z-20">
+                        <a href="/{{item.content.prefix}}" class="text-white text-xl font-bold">{{item.content.title}}</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% else %}
+        <div class="text-lg text-center mb-20">{{lang.__('EMPTY_RESULT')}}</div>
+        {% endif %}
+        {% endif %}
+
+        <div class="container mx-auto"  >
+            <div class="blog-main-item lg:flex block w-full">
+                <div class="blog-item-img lg:w-5/12">
+                    <img width="533" height="355" src="/stream?image={{first_item.picture}}" class="rounded-lg rounded w-full my-10 lg:my-10 max-w-full" alt="{{first_item.content.title}}">
+                </div>
+                <div class="blog-item-content lg:w-7/12">
+                    <div class=" lg:pt-10 lg:pr-10 lg:px-20 px-2">
+                        <h2><a href="{{first_item.content.prefix}}" class="py-6 block font-bold purple-color text-xl lg:text-3xl">{{first_item.content.title}}</a></h2>
+                        <p class="text-sm lg:text-lg font-semibold text-gray-600">{{first_item.content.content|striptags|raw|slice(0,400)|raw}} </p>
+                        <div class="item-writer flex gap-3 gap my-12">
+                            <a href="/{{item.content.prefix}}"><img width="800" height="534" loading="lazy"  alt="Doctor" src="/stream?image=/uploads/img/Ellipse_13_ia.webp" class="rounded-full w-16 border-1 border border-purple-600"   ></a>
+                            <div class="w-full">
+                                <a class=" block cyan-color font-semibold" href="{{first_item.content.prefix}}">{{first_item.field.author_name}}</a>
+                                <Span class=" block text-gray-400 " >{{first_item.updated_at|date('Y-m-d')}}</Span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cairo mx-auto  pb-2   purple-color font-semibold text-2xl mx-auto text-center w-72">
+            {{lang.__('Latest articles')}}
+            <span class="mx-auto my-4 w-20 border border-b-1  border-gray-300 block"></span>
+        </div>
+
+        <div class="custom-scroll-container  custom-scroll relative z-10 overflow-x-auto">
+            <div style="min-width: {{ 360 * items|length}}px;"   class="custom-scroll-list w-full flex gap-3 gap px-1 overflow-x-auto">
+                {% for item in items %}
+                <div class="relative custom-scroll-item w-full lg:h-full h-auto my-2 rounded-xl overflow-hidden">
+                    <img width="350" height="232" loading="lazy" src="/stream?image={{item.picture}}" alt="{{item.content.title}}" class="rounded-lg w-full h-64" />  
+                    <div class="shadow w-full h-full left-0 top-0 absolute z-10 rounder-lg"></div>
+                    <div class="w-full absolute  left-0 bottom-8 hover:bottom-10 px-8 z-20">
+                        <a href="/{{item.content.prefix}}" class="text-white text-xl font-bold">{{item.content.title}}</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="relative pb-6   w-full overflow-hidden bg-gray-100">
+        <img loading="lazy" alt="circle" src="/stream?image=/uploads/img/circles-bg.webp" class="absolute left-0 top-0 w-full" style="opacity: 0.05;" />
+        
+        {% set catTitle = lang.__('Women health') %}
+        {% set catItemsList = cat_her %}
+        {% include 'views/front/blog_cat_items.html.twig' %}
+
+    </div>
+
+
+    <div class="relative pb-24 pt-10  w-full  cyan-gradient45 overflow-hidden ">
+        <img loading="lazy" alt="bg" src="/stream?image=/uploads/img/light-network.webp" class="absolute left-0 top-0 w-full" style="opacity: .4;" />
+        <div class="container  mx-auto relative z-10  px-2"  style="z-index:9999">
+            <div class="lg:w-6/12 lg:float-right relative  lg:top-20 ">
+                <h3 class=" text-xl lg:text-3xl font-semibold text-white">الاستشارات الطبية الاونلاين. محادثات فعاله مع أطبائنا اينما كنت</h3>
+                <p class=" py-6 purple-color lg:text-lg text-sm font-semibold">
+                    اذا كنت غير قادر على الخروج من المنزل أو كنت تقطن في بلد أجنبيه فلا داعي للقلق. نحن الان نوفر خدمة الاستشارات الطبيه الاإلكترونية عن طريق الإنترنت التي من خلالها يمكنك التحدث مع أحد الأطباء المتخصصين ومناقشة جميع التفاصيل والحصول على الإستشارة الطبية الاونلاين المناسبة. 
+                <a href="article.php" class="mt-2 font-normal block mx-auto w-32 py-2 px-6 purple-bg text-white text-center text-sm rounded-lg">احجز موعدا</a>
+                </p>
+            </div>
+        </div>
+        <div class="absolute left-0 right-0 top-0 container  mx-auto relative z-10  px-2">
+            <div class="lg:w-6/12 lg:inline-block hidden">
+                <img loading="lazy" alt="{{app.settings['sitename']}}" src="/stream?image=/uploads/img/doctor.webp" style="max-width:none;" class="float-left" width="140%" height="auto" />
+            </div>
+        </div>
+        <div class="crossed lg:block hidden">
+        </div>
+    </div>
+
+    <div class="relative pb-6  w-full overflow-hidden ">
+        <img loading="lazy" alt="{{app.settings['sitename']}}" src="/stream?image=/uploads/img/circles-bg.webp" class="absolute left-0 top-0 w-full" style="opacity: 0.05;" />
+        {% set catTitle = lang.__('Men health') %}
+        {% set catItemsList = cat_him %}
+        {% include 'views/front/blog_cat_items.html.twig' %}
+    </div>
+
+    {% include 'views/front/services_bottom.html.twig' %}
+
+
+{% include 'views/front/includes/footer.html.twig' %} 

@@ -1,0 +1,90 @@
+{% include 'views/front/includes/header.html.twig' %}
+{% include 'views/front/includes/navbar.html.twig' %}
+<div class="w-full cyan-bg pb-6 pt-2 relative ">
+    <div class="w-full overflow-hidden h-full absolute bottom-0 left-0">
+        <img loading="lazy" alt="{{app.settings['sitename']}}" src="/stream?image=/uploads/img/light-network.webp" class="absolute left-0 top-0 w-full" style="opacity: .3;" />
+    </div>
+    <div class="container mx-auto relative">
+        <h1 class="text-2xl mx-auto w-auto text-center font-bold purple-color">{{lang.__('online_consultation')}}</h1>
+    </div>
+</div>
+
+<div class="p-4 text-center  mx-auto" style="max-width:800px">
+  <h2 class="purple-color h2">{{item.content.title}}</h2>
+  <p>{{item.content.content|raw}}</p>
+</div>
+<hr />
+<div class="bg-gray-100 relative">
+    <img loading="lazy" alt="{{app.Settings['sitename']}}" src="/stream?image=/uploads/img/light-network.webp" class="absolute left-0  w-full " style="top:100px; opacity: .3;" />
+    <form action="/submit/booking" id="booking-form" class="max-w-xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <input type="hidden" name="params[itemid]" value="{{item.id}}">
+        <input type="hidden" name="params[class]" value="OnlineConsultation">
+        <input type="hidden" name="params[status]" value="new">
+        <div class="bg-white overflow-hidden sm:rounded-lg relative ">
+            <div class="flex w-full px-4 py-5 sm:px-6 gap gap-3">
+                <div class="w-full py-4">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900">
+                        {{lang.__('book_with')}} : <a href="/{{item.doctor.content.prefix}}">{{item.doctor.content.title}}</a>
+                    </h3>
+                    <p class="mt-1 max-w-2xl text-sm text-gray-500">
+                        {{lang.__('contact info')}}
+                    </p>
+                </div>
+                <div class="w-40">
+                    <img loading="lazy" src="/stream?image={{item.doctor.picture}}" width="100" height="100" class="rounded-full p-2 w-28 h-28" />
+                </div>
+            </div>
+            <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
+                <dl class="sm:divide-y sm:divide-gray-200">
+                    <div class="sm:flex sm:items-center sm:justify-between sm:py-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">
+                            <p>{{lang.__('Name')}}</p>
+                            <input required class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-first-name" type="text" placeholder="{{lang.__('ENTER_FULLNAME')}}" name="params[custom_field][name]">
+                        </dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 ">
+                            <p>{{lang.__('Mobile')}}</p>
+                            <input required maxlength="11" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-mobile" type="text" placeholder="{{lang.__('mobile')}}" name="params[custom_field][mobile]">
+                        </dd>
+                    </div>
+                    <div class="sm:flex sm:items-center sm:justify-between sm:py-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500 w-full">
+                            <p>{{lang.__('Date')}}</p>
+                            <input required class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-date" type="date" placeholder="{{lang.__('Date')}}" name="params[custom_field][date]">
+                        </dt>
+                    </div>
+                </dl>
+            </div>
+            <p class="p-2">{{lang.__('SELECT_PLATFORM')}}</p>
+            <div class="px-4 py-3 text-right sm:px-6">
+                <div class=" flex justify-center items-center gap gap-3">
+                    <label class="switch-icons-border inline-flex items-center mx-2 cursor-pointer">
+                        <input type="radio" class="hidden" name="params[custom_field][communication]" value="skype">
+                        <img loading="lazy" src="https://www.bedayahospitals.com/library/svg/skype.svg" class="border hover:border-gray-400  p-2" width="50" height="50" alt="Chat">
+                    </label>
+                    <label class="switch-icons-border inline-flex items-center mx-2 cursor-pointer">
+                        <input type="radio" class="hidden" name="params[custom_field][communication]" value="zoom">
+                        <img loading="lazy" src="https://www.bedayahospitals.com/library/svg/zoom.svg" class="border  hover:border-purple-400 p-2" width="50" height="50" alt="Chat">
+                    </label>
+                    <label class="switch-icons-border inline-flex items-center mx-2 cursor-pointer">
+                        <input type="radio" class="hidden" name="params[custom_field][communication]" value="messenger">
+                        <img loading="lazy" src="https://www.bedayahospitals.com/library/svg/messenger.svg" class="border hover:border-purple-400 p-2" width="50" height="50" alt="Chat">
+                    </label>
+                    <label class="switch-icons-border inline-flex items-center mx-2 cursor-pointer">
+                        <input type="radio" class="hidden" name="params[custom_field][communication]" value="facetime">
+                        <img loading="lazy" src="https://www.bedayahospitals.com/library/svg/facetime.svg" class="border hover:border-purple-400 p-2" width="50" height="50" alt="Chat">
+                    </label>
+                    <label class="switch-icons-border inline-flex items-center mx-2 cursor-pointer">
+                        <input type="radio" class="hidden" name="params[custom_field][communication]" value="phone">
+                        <img loading="lazy" src="https://www.bedayahospitals.com/library/svg/audio-call.svg" class="border hover:border-purple-400 p-2" width="50" height="50" alt="Chat">
+                    </label>
+                </div>
+            </div>
+            <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    {{lang.__('Book Now')}}
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+{% include 'views/front/includes/footer.html.twig' %}

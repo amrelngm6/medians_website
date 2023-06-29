@@ -1,0 +1,80 @@
+{
+  "name": "medians-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@andresouzaabreu/vue-data-table": "^3.3.3",
+    "@vueform/multiselect": "^2.6.1",
+    "@vuepic/vue-datepicker": "^4.2.2",
+    "chart.js": "^4.3.0",
+    "core-js": "^2.6.5",
+    "qrcode.vue": "^3.3.4",
+    "ssh2-promise": "^1.0.3",
+    "v-dropdown": "^3.0.0-beta.1",
+    "v-selectmenu": "^2.0.2",
+    "vue": "^2.6.10",
+    "vue-chartjs": "^5.2.0",
+    "vue-morris": "^1.1.0",
+    "vue-native-notification": "^1.1.1",
+    "vue-search-select": "^3.1.0",
+    "vue3-daterange-picker": "^1.0.1",
+    "vuejs-datepicker": "^1.6.2"
+  },
+  "peerDependencies": {},
+  "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-brands-svg-icons": "^6.2.1",
+    "@fortawesome/free-regular-svg-icons": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@vue/cli-plugin-babel": "^3.0.1",
+    "@vue/cli-plugin-eslint": "^3.0.1",
+    "@vue/cli-service": "^3.0.1",
+    "autoprefixer": "^9.8.6",
+    "axios": "^1.3.4",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "feather-icons": "^4.26.0",
+    "jquery": "^3.6.4",
+    "medians-calendar-vue3": "git+https://github.com/amrelngm6/medians-calendar-vue3.git",
+    "portal-vue": "^3.0.0",
+    "postcss": "^8.4.21",
+    "svg-loaders": "^0.2.0",
+    "tailwindcss": "^3.2.7",
+    "toastify-js": "^1.11.2",
+    "vue-infinite-loading": "^2.4.5",
+    "vue-moment": "^4.1.0",
+    "vue-simple-alert": "^1.1.1",
+    "vue-template-compiler": "^2.6.10",
+    "vue2-dropzone": "^3.6.0",
+    "vuedraggable": "^2.24.3"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}

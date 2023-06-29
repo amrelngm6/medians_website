@@ -1,9 +1,0 @@
-{% include 'views/front/includes/header.html.twig' %}
-    
-        <div id="smooth-wrapper" class="pushable-content">
-            <div id="smooth-content">
-            {% for pageBlock in page.content %}
-                {{pageBlock.value | html_entity_decode | raw}}
-            {% endfor %}
-
-{% include 'views/front/includes/footer.html.twig' %}

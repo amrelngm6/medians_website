@@ -1,0 +1,32 @@
+
+    <div class="relative pb-20  w-full overflow-hidden px-1">
+        <img alt="circle" loading="lazy" src="/stream?image=/uploads/img/circles-bg.webp" class="absolute left-0 top-0 w-full" style="opacity: 0.05;" />
+
+        <div class="container mx-auto relative z-10">
+        
+            <h4 class="title-gradient rounded-lg py-2 mt-12 my-2 pl-40 pr-6 purple-color font-semibold text-xl " style="width: max-content;">
+                {{lang.__('Bedaya services')}}
+            </h4>
+            
+            <div class="lg:flex  gap-3 gap row">
+                
+                {% for item in specializations %}
+                {% if loop.index < 3 %}
+                <div class="blog-main-item lg:flex block w-full">
+                    <div class="blog-item-img lg:w-5/12">
+                        <a href="{{item.content.prefix}}"><img loading="lazy" src="/stream?image={{item.picture}}" class="rounded-lg w-full py-4 lg:py-6" alt="{{item.content.title}}"></a>
+                    </div>
+                    <div class="blog-item-content lg:w-7/12">
+                        <div class="py-2 lg:py-6 lg:pr-6 lg:px-10 px-2">
+                            <a href="{{item.content.prefix}}" class="lg:py-4 py-2 block font-bold purple-color lg:text-xl md:text-lg text-lg">{{item.content.title}}</a>
+                            <p class=" font-semibold text-gray-600 lg:text-base text-sm">{{item.content.content|striptags|raw|slice(0, 200)|raw}}.. <a class="text-gray-400 " href="{{item.content.prefix}}">{{lang.__('more')}}</a> </p>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </div>

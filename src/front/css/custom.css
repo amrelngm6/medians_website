@@ -1,0 +1,503 @@
+/* cairo-200 - arabic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Cairo';
+  font-style: normal;
+  src: url('/src/front/fonts/cairo-v28-arabic_latin-500.eot'); /* IE9 Compat Modes */
+  src: url('/src/front/fonts/cairo-v28-arabic_latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/src/front/fonts/cairo-v28-arabic_latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/src/front/fonts/cairo-v28-arabic_latin-500.woff') format('woff'), /* Modern Browsers */
+       url('/src/front/fonts/cairo-v28-arabic_latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/src/front/fonts/cairo-v28-arabic_latin-500.svg#Cairo') format('svg'); /* Legacy iOS */
+}
+/* tajawal-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/src/front/fonts/tajawal-v9-arabic_latin-500.eot'); /* IE9 Compat Modes */
+  src: url('/src/front/fonts/tajawal-v9-arabic_latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/src/front/fonts/tajawal-v9-arabic_latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/src/front/fonts/tajawal-v9-arabic_latin-500.woff') format('woff'), /* Modern Browsers */
+       url('/src/front/fonts/tajawal-v9-arabic_latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/src/front/fonts/tajawal-v9-arabic_latin-500.svg#Tajawal') format('svg'); /* Legacy iOS */
+}
+
+.lg-custom-scroll-container
+{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+
+.lg-custom-scroll-list
+{
+    width: max-content;
+}
+
+.lg-custom-scroll-item
+{
+    max-width: 350px;
+    display: inline-block;
+}
+
+@media screen and (max-width: 767px) 
+{
+    body .curve-doctor
+    {
+        position: relative;
+        top: 50px;
+    }
+    body .home-bg {
+/*        height: 120%;*/
+    }
+    body section {
+        padding: 0 !important;
+    }
+}
+
+@media screen and (max-width: 991px) 
+{
+
+    .custom-scroll-container
+    {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+    }
+
+
+    .custom-scroll-list
+    {
+        width: max-content;
+    }
+    
+    .custom-scroll-item
+    {
+        max-width: 350px;
+        display: inline-block;
+    }
+
+    .crossed:after {
+        left: -50px;
+        bottom: -45%;
+    }
+}
+body {
+    font-family: 'Tajawal';
+}
+body label {
+    font-family: 'Cairo';
+}
+
+iframe {
+    max-width: 100%;
+}
+.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{font-family: 'Cairo'; margin:1rem 0;font-weight:500;line-height:1.2}.h1,h1{font-size:2.5rem}.h2,h2{font-size:2rem}.h3,h3{font-size:1.75rem}.h4,h4{font-size:1.5rem}.h5,h5{font-size:1.25rem}.h6,h6{font-size:1rem}
+select 
+{
+  min-width: 195px;
+}
+
+p {
+    margin-bottom: 10px;
+    font-family: 'Tajawal';
+}
+.ltr
+{
+    direction: ltr;
+}
+.rtl
+{
+    direction: rtl;
+}
+.z-index9
+{
+    z-index: 9;
+}
+.z-index99
+{
+    z-index: 99;
+}
+.purple-color
+{
+    color: #4f276f;
+}
+.purple-bg
+{
+    background-color: #4f276f;
+}
+.cyan-color
+{
+    color: #0399a8;
+}
+.cyan-bg
+{
+    background-color: #0399a8;
+}
+a.cyan-bg, 
+button.cyan-bg {
+    color: #fafafa;
+}
+.lightcyan-color
+{
+    color: #DFF7FF;
+}
+.lightcyan-bg
+{
+    background-color: #DFF7FF;
+}
+.rtl .title-gradient
+{
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(3,135,168,.50) 100%);
+}
+.title-gradient
+{
+    background: rgb(255,255,255);
+    background: linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(3,135,168,.50) 100%);
+}
+
+.rtl h3.cyan-gradient45, .rtl .title-gradient 
+{
+    padding-right: 2rem;
+    padding-left: 10rem;
+}
+h3.cyan-gradient45, .title-gradient 
+{
+    padding-left: 2rem;
+    padding-right: 10rem;
+}
+
+.cyan-gradient
+{
+    background: rgb(255,255,255);
+    background: linear-gradient(135deg, rgba(52,173,217,1) 0%, rgba(3,135,168,1) 100%);
+}
+.cyan-gradient-vertical
+{
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(52,173,217,1) 0%, rgba(3,135,168,1) 100%);
+}
+.rtl .cyan-gradient45
+{
+    background: linear-gradient(225deg, rgba(52,173,217,1) 0%, rgba(3,135,168,1) 100%);
+}
+.rtl .cyan-gradient90
+{
+    background: linear-gradient(270deg, rgba(52,173,217,1) 0%, rgba(3,135,168,1) 100%);
+}
+.cyan-gradient45
+{
+    background: rgb(255,255,255);
+    background: linear-gradient(45deg, rgba(52,173,217,1) 0%, rgba(3,135,168,1) 100%);
+}
+.cyan-gradient90
+{
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(52,173,217,1) 0%, rgba(3,135,168,1) 100%);
+}
+.switch-hover:hover{
+    background: linear-gradient(45deg, rgba(52,173,217,1) 0%, rgba(3,135,168,1) 100%);
+}
+.switch-hover img.pic-1,
+.switch-hover:hover img.pic-2
+{
+    display: block;
+}
+.switch-hover img.pic-2,
+.switch-hover:hover img.pic-1
+{
+    display: none;
+}
+
+.cairo, a, h1, h2, h3, h4, h5, h6 
+{
+    font-family: "Tajawal";
+}
+p 
+{
+    font-family: "Tajawal";
+}
+
+.video-center
+{
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+
+
+.crossed:after {
+    content: '';
+    position: absolute;
+    left: -50px;
+    right: auto;
+    top: auto;
+    bottom: -40%;
+    margin: 0 auto;
+    width: 2000px;
+    height: 300px;
+    background: #fff;
+    transform: rotate(4deg);
+    z-index: 999; 
+}
+
+.custom-scroll::-webkit-scrollbar-thumb
+{
+    border-radius: 5px;
+    background: #4f276f;
+}
+.custom-scroll::-webkit-scrollbar-track
+{
+    border-radius: 5px;
+    background: rgba(255,255,255,.5);
+}
+.custom-scroll::-webkit-scrollbar
+{
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0 5px;
+    width: 3px;
+    height: 3px;
+    transition: all 1s  ease-in-out;
+    -webkit-transition: all 1s  ease-in-out;
+}
+
+.custom-scroll:hover::-webkit-scrollbar
+{
+    width: 6px;
+    height: 6px;
+    transition: all 1s  ease-in-out;
+    -webkit-transition: all 1s  ease-in-out;
+}
+
+
+.success-stories-grid .play-icon
+{
+    visibility: hidden;
+}
+.success-stories-grid .custom-scroll-item:hover .play-icon
+{
+    visibility: visible;
+}
+
+.success-stories-grid > div:nth-child(2),
+#vision > div:nth-child(2)
+{
+    margin-top: 50px;
+}
+
+footer
+{
+    overflow-y: hidden;
+}
+.footer-bg
+{
+    background: #2F3757;
+}
+
+.mobile-menu .sub-menu
+{
+    visibility: hidden;
+}
+.mobile-menu li:hover .sub-menu
+{
+    visibility: visible;
+}
+
+#mobile-menu
+{
+    visibility: hidden;
+}
+#mobile-menu.show
+{
+    visibility: visible;
+}
+
+.dates-grid > div > span::before
+{
+    content: " ";
+    width: 14px;
+    height: 14px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    border: 2px solid #4f276f;
+}
+.dates-grid > div:nth-child(even) > span::before
+{
+    top: -16px;
+}
+.dates-grid > div:nth-child(odd) > span::before
+{
+    top: 36px;
+}
+.dates-grid > div:hover > span,
+.dates-grid > div:hover > span::before
+{
+    color: #fff;
+    background:  #4f276f;
+}
+
+.dates-grid > div
+{
+    position: relative;
+}
+.dates-grid > div:nth-child(odd)
+{
+    top: 50px;
+}
+.dates-grid > div:nth-child(even)
+{
+    bottom: 50px;
+
+}
+
+.dates-grid > div:nth-child(even) {
+  animation: MoveUpDown 2.5s linear infinite;
+  position: relative;
+}
+.dates-grid > div:nth-child(odd) {
+  animation: MoveUpDown2 2.5s linear infinite;
+  position: relative;
+}
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 15px;
+  }
+}
+
+@keyframes MoveUpDown2 {
+  0%, 100% {
+    top: 0;
+  }
+  50% {
+    top: 15px;
+  }
+}
+
+.shadow
+{
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.8));
+}
+
+
+.has-sub-menu > .sub-menu
+{
+    top: 100px;
+    visibility: hidden;
+    transition: all .3s ease-in-out 0s;
+}
+
+.has-sub-menu:hover > .sub-menu
+{
+    top: 60px;
+    visibility: visible;
+} 
+
+ .sub-menu .has-sub-menu:hover > .sub-menu 
+{
+    top: 0px;
+}
+.block-overlay-hover
+{
+    max-height: 40px;
+    transition:  all .5s ease-in-out 0s;    
+}
+.block-overlay:hover > .block-overlay-hover
+{
+    max-height: 100%;
+    transition:  all .5s ease-in-out;    
+}
+
+.list-icon li
+{
+    position: relative;
+    padding: 0 20px;
+    margin: 5px 0;
+    text-align: initial;
+}
+.list-icon li::before
+{
+    content: "🗸";
+    display: inline-block;
+    position: absolute;
+    top: 3px;
+    right: 0;
+    color: #f30;
+}
+
+.owl-nav button.owl-next
+{
+    float: right;
+}
+.owl-nav button span
+{
+    float: right;
+    background: #eee;
+    border-radius: 10px;
+    font-size: 30px;
+    width: 50px;
+    margin-top: 15px;
+}    
+
+
+.list-icon ul 
+{
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+} 
+
+.offers-container {
+    text-align: initial;
+}
+
+
+.show-modal-iframe
+{
+    cursor: pointer;
+}
+.slider-text
+{
+    z-index: 999;
+}
+table {
+    width: 100%;
+}
+.home-doctors-list
+{
+    position: relative;
+}
+.fa.checked
+{
+    color: orange;
+}
+.show-mobile { display:none; }
+@media (max-width:500px)
+{
+    .main-header-slider
+    {
+        min-height: 100vh;
+    }
+    .hide-mobile
+    {
+        display: none;
+    }
+    body .show-mobile { display:block; }
+}
+

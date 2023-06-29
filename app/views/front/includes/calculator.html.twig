@@ -1,0 +1,179 @@
+{% include 'views/front/includes/header.html.twig' %}
+
+    <div class="w-full cyan-bg pb-20 pt-2 relative ">
+        <div class="w-full overflow-hidden h-full absolute bottom-0 left-0">        
+            <img loading="lazy"  alt="" src="/stream?image=/uploads/img/light-network.webp" class="absolute left-0 top-0 w-full" style="opacity: .3;" />
+            <h1 class="text-2xl mx-auto w-auto text-center font-bold purple-color" >{{lang.__('calculator')}}</h1>
+        </div>
+    </div>
+
+    <div class="blog-content ">
+        <div class="mx-auto container">
+        
+            <div class="w-full flex gap gap-6">
+
+                <div class="w-lg">
+                    <div class="light-grey-bg pad-50 pad-bot-30 text-center">
+                        <p class="purple-color text-xl">تاريخ اليوم الاول من اخر دورة ؟ </p>
+                        <input type="text" name="period-start" id="period-start-calendar" class="calendar form-input">
+                    </div>
+                </div>
+                <div class="w-full">
+                    1
+                </div>
+
+
+
+
+            </div>
+            <form class="def-form pad-top-50" id="_pregnancy_calculator">
+                <div class="row">
+                    <input type="hidden" id="calculator-date">
+                    <div class="col-md-12">
+                        <div class="light-grey-bg pad-50 pad-bot-30 text-center">
+                            <span class="step-num white-block radius-half mar-bot-30"> 1 </span>
+                            <h2 class="purple-color sub-ttl h3 bold">تاريخ اليوم الاول من اخر دورة ؟ </h2>
+                        </div>
+                    </div>
+                <div class="text-center pad-20 ">
+                    <button type="submit" id="_pregnancy_calculator_btn" class="btn-main btn-large wide-btn radius-10">تنفيذ</button>
+                </div>
+            </form>
+            <div id="period-calendar"></div>
+            <hr />
+            <div class="block pad-top-20 color-selector hide" id="preg-range-info">
+                <span class="pad-right-10"><em class="period-color"></em> الفترة المحتملة للولادة </span>
+            </div>
+            <div class="text-center hide"  id="preg-picture-parent">
+                <h3 class="purple-color">انت حامل فى الشهر   <span id="preg-picture-title" class="h3" ></span> </h3>
+                <img loading="lazy" id="preg-picture" src="https://www.bedayahospitals.com/route/image.php?w=200&img=pic&src=img/pregnancy/1.png" />
+            </div>
+            <div class="block pad-top-20 color-selector hide" >
+                <span class="pad-right-10"><em class="pre-color"></em> Period ايام</span>
+                <span class="pad-right-10"><em class="post-period-color"></em> Post-period ايام</span>
+                <span class="pad-right-10"><em class="fertility-color"></em> Fertility time</span>
+            </div>
+
+<script type="text/javascript">
+    
+    jQuery(document).ready(function(){
+        jQuery('#_pregnancy_calculator_btn').on('click', function(e){
+            
+            var fullDate = jQuery('#calculator-date').val();
+
+            reloadCalendar(fullDate);
+
+        });
+    });
+
+function reloadCalendar(d, dates)
+{
+    jQuery('#preg-picture-parent').addClass('hide');
+    jQuery('#period-calendar').multiDatesPicker('resetDates');
+    jQuery('#period-calendar').html(' ').removeClass('hasDatepicker');
+
+    var date1 = new Date(d);
+    date1.setMonth(date1.getMonth() + 9);
+    var n = sumDate(date1 , 6);
+    var date = new Date(n);
+
+    var dates = [];
+
+    for (var i = 2; i >= 0; i--) 
+    {
+        dates[i] = sumDate(date , 1, '/');
+    }
+
+    var pregMonth = monthDiff(new Date(d), new Date());
+    switch (pregMonth)
+    {
+        case 0:
+            img = '1.png';
+            break;
+
+        case 1:
+            img = '1.png';
+            break;
+            
+        case 2:
+            img = '2.png';
+            break;
+            
+        case 3:
+            img = '2.png';
+            break;
+            
+        case 4:
+            img = '2.png';
+            break;
+            
+        case 5:
+            img = '2.png';
+            break;
+            
+        case 6:
+            img = '3.png';
+            break;
+            
+        case 7:
+            img = '3.png';
+            break;
+            
+        case 8:
+            img = '4.png';
+            break;
+            
+        case 9:
+            img = '4.png';
+            break;
+            
+        default:
+            img = '1.png';
+            break;
+    }
+
+    date.setFullYear(date.getFullYear(), date.getMonth() + 1, date.getDate());
+
+    var y = date.getFullYear();
+    var m1 = date.getMonth();
+    var m2 = date.getMonth() + 1;
+
+    var today = sumDate(date , -45, '/');
+
+    setTimeout(function()
+    {
+        jQuery('#period-calendar').multiDatesPicker(
+        {
+            gotDate: date,
+            // beforeShowDay: function(d) {
+                // var a = new Date('06/12/2020'); // April 10, 2012
+                // var b = new Date('06/13/2020'); // April 20, 2012
+                // return [true, a <= d && d <= b ? "preperiod-color" : ""];
+            // },
+            addDates: dates,
+            numberOfMonths: [1,2],
+            defaultDate: today
+        }); 
+        
+        jQuery('#preg-range-info').removeClass('hide');
+        
+        jQuery('#preg-picture-parent').removeClass('hide');
+        jQuery('#preg-picture-title').html(pregMonth);
+
+        document.getElementById("preg-picture").src = imageURL + 'w=200&img=pic&src=img/pregnancy/' + img;
+        
+    }, 500);
+
+}
+
+function monthDiff(d1, d2) {
+    var months;
+    months = (d2.getFullYear() - d1.getFullYear()) * 12;
+    months -= d1.getMonth();
+    months += d2.getMonth();
+    return months <= 0 ? 0 : months;
+}
+</script>
+        </div>
+    </div>
+{% include 'views/front/includes/footer.html.twig' %} 

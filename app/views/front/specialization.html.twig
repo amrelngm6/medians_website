@@ -1,0 +1,86 @@
+{% include 'views/front/includes/header.html.twig' %}
+{% include 'views/front/includes/navbar.html.twig' %}
+
+    <div class="w-full py-2 cyan-bg relative mb-10">
+        <div class="w-full overflow-hidden h-full cyan-bg absolute top-0 left-0">
+            <img loading="lazy" alt="{{lang.__('SPECIALIZATIONS')}}" alt="{{app.sitename}}" src="/stream?image=/uploads/img/light-network.webp" class="absolute left-0 top-0 w-full" style="opacity: .3;" />
+            <img loading="lazy" alt="{{lang.__('SPECIALIZATIONS')}}" src="/stream?image=/uploads/img/circles-bg.webp" class="absolute left-0 bottom-0 w-full" style="opacity: .3;" />
+        </div>
+        <div class="container mx-auto relative px-1">
+            <p class="text-sm pb-2 flex gap-2 font-bold text-gray-600">
+            <a href="/">{{lang.__('homepage')}} </a> | 
+            <span>{{lang.__('SPECIALIZATIONS')}} </span> | <span class="purple-color">{{item.content.title}}</span></p>
+
+
+            <div class="mx-auto w-full relative z-10 mb-8">
+                <div class="relative top-0  left-0 right-0 px-0 pt-2 pb-6  ">
+                    <div class="lg:flex block w-full  gap-3 gap">
+                        <div class="lg:w-8/12 w-full bg-white border-1 border border-gray-100 rounded-lg px-4">
+                            <h1 class="text-xl purple-color font-bold mb-4">{{item.content.title}}</h1>
+                            <hr class="pb-2" />
+
+                            {% if item.childs|length %}
+                            <h2 class="text-xl purple-color font-bold mb-4">{{lang.__('Sub-categories')}}</h1>
+
+                                {% for similar_item in item.childs %}
+                                <div class="blog-main-item lg:flex block w-full">
+                                    <div class="blog-item-img lg:w-5/12">
+                                        <img loading="lazy" src="/stream?image={{similar_item.picture}}" class="rounded-lg w-full py-4 lg:py-6">
+                                    </div>
+                                    <div class="blog-item-content lg:w-7/12">
+                                        <div class="py-2 lg:py-6 lg:pr-6 lg:px-10 px-2">
+
+                                            <a href="/{{similar_item.content.prefix}}" class="block  font-semibold text-sm cyan-color">{{similar_item.created_at | date('Y-m-d')}}</a>
+                                            <a href="/{{similar_item.content.prefix}}" class="lg:py-4 py-2 block font-bold purple-color lg:text-xl md:text-lg text-base">{{similar_item.content.title}}</a>
+                                            <p class=" font-semibold text-gray-600 lg:text-base text-sm">{{similar_item.content.content |striptags|slice(0, 100) }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+
+                            {% else %}
+                            <img loading="lazy" src="/stream?image={{item.picture}}" alt="Doctor" class="w-full" />
+
+                            <div class="relative my-10">
+                                {% set params = {'item': item, 'lang': lang} %}
+                                {{app.renderTemplate(item.content.content, item).render(params)|raw}}
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="w-full lg:w-4/12" id="app">
+                            
+                            {% include 'views/front/side_specializations.html.twig' %}
+
+                            {% include 'views/front/side_similar_items.html.twig' %}
+                            
+                            <div class="cyan-gradient45 rounded-lg py-2 mt-10 pl-40 pr-6 purple-color font-semibold text-lg  ">
+                                عروض مميزة
+                            </div>
+                            <div class="relative border-1 border border-gray-100  bg-white rounded-tl-2xl rounded-br-2xl p-6 pb-6 my-6">
+                                <a href="#!" class="text-xl font-semibold py-2 mb-2 block">عرض الحقن المجهري</a>
+                                <p class="text-sm py-2">، التقنية الأكثر تقدماً وتطوراً على مستوى العالم، وهي تقنية تسمح للزوجين بإختيار جنس المولود. العرض يشمل تحديد النوع مع تكلفة الحقن المجهري </p>
+                                <ul class="pt-2 pb-6 font-semibold purple-color">
+                                    <li class="py-1">تحضير ما قبل السحب -</li>
+                                    <li class="py-1">سحب البويضات -</li>
+                                    <li class="py-1">تقشير البويضات -</li>
+                                    <li class="py-1">حقن البويضات -</li>
+                                    <li class="py-1">تحضير قبل الارجاع -</li>
+                                </ul>
+                                <div class="w-full text-center ">
+                                    <a class="mx-auto my-2 py-3 px-4 cyan-bg purple-color rounded-lg  inline-block font-semibold  " href="#!">التفاصيل</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="relative pb-20  w-full overflow-hidden px-1">
+        <img loading="lazy"  alt="{{lang.__('SPECIALIZATIONS')}}" src="/stream?image=/uploads/img/circles-bg.webp" class="absolute left-0 top-0 w-full" style="opacity: 0.05;" />
+        <div class="container mx-auto relative z-10">
+            {% include 'views/front/side_specs_similar_items.html.twig' %}
+        </div>
+    </div>
+
+{% include 'views/front/includes/footer.html.twig' %}

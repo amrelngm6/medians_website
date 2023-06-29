@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>{{app.Settings.sitename}}</title>
+    <link href="/dist/css/app.css" rel="stylesheet" type="text/css" >
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp|Cairo:wght@300;500;700;900">
+    <script type="text/javascript">
+        const enable_debug = {{app.Settings.enable_debug ? 1 : 0}};
+        const url = '{{app.CONF.url}}';
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body style="direction: {{lang.__('dir')}};" class="{{lang.__('dir')}}">
+    <div id="app">
+    {% include 'views/admin/includes/nodata.html.twig' %}    
+    </div>
+
+    <div>            
+        <div id="root-parent"  
+        data-status="{{app.request().get('load')}}"
+        data-page="{{app.request().requestUri|slice(1)}}"
+        data-menu="{{app.menu()|json_encode}}"
+        data-auth="{{app.auth|json_encode}}"
+        data-lang="{{lang.vueLang()|json_encode}}"
+        data-setting="{{app.Settings|json_encode}}"
+        data-conf="{{app.CONF|json_encode}}"
+        data-active-tab="{{component}}"
+        data-component="{{component}}"
+        data-types-list="{{typesList|json_encode}}"
+        ></div>
+
+    </div>
+                 
+    <style type="text/css">
+        .text-default{ text-align:  {{lang.__('lang') == 'ar' ? 'right' : 'left'}} }
+    </style>
+
+    <script type="text/javascript" src="/dist/js/app.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script type="text/javascript">
+    </script>
+</body>
+</html>

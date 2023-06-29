@@ -1,0 +1,34 @@
+
+                            <div class="cyan-gradient45 rounded-lg py-2 mb-4 pl-40 pr-6 purple-color font-semibold text-lg  ">
+                                {{lang.__('Categories')}}
+                            </div>
+                            <div class="relative border-1 border border-gray-100 gap-3 bg-white rounded-lg mb-6 p-2 flex">
+                                <div class=" px-6  w-full">
+                                    <ul class="accordion-menu">
+                                        {% for spec_item in app.specializations %}
+
+                                        <li class="py-3 border-b-1 border-b border-gray-200 switch-accordion">
+                                            {% if spec_item.childs %}
+                                            <a href="#!" class=" flex gap gap-4 font-bold text-lg">
+                                                <svg class="Shape" viewBox="0 0 8.5 17" style="width:10px">
+                                                    <path fill="rgba(0,0,0,0)" stroke="rgba(78,42,115,1)" stroke-width="1.5px" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" shape-rendering="auto" id="Shape" d="M 8.5 17 L 0 8.5 L 8.5 0"></path>
+                                                </svg>
+                                                <span>{{spec_item.content.title}}</span>
+                                            </a>
+                                            <ul class="{% if spec_item.id != item.parent_id %} hidden {% endif %}  sub-content text-gray-500 w-full px-7 block text-lg">
+                                            {% for child_spec_item in spec_item.childs %}
+                                            <li class="w-full block my-3 gap gap-4 font-bold text-lg">
+                                                <a class="{% if child_spec_item.id == item.id %} purple-color {% endif %} w-full block my-3 gap gap-4 font-bold text-lg" href="{{child_spec_item.content.prefix}}" >
+                                                    <span>{{child_spec_item.content.title}} </span>
+                                                </a>
+                                            </li>
+                                            {% endfor %}
+                                            </ul>
+                                            {% else  %}
+                                            <a class="w-full block my-3 gap gap-4 font-bold text-lg" href="#www.bedayahospitals.com/عيادة-الصحة-الجنسية/" class="normal-text">{{spec_item.content.title}}</a>
+                                            {% endif %}
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>

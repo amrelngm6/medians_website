@@ -1,0 +1,30 @@
+
+    <div class="relative py-10 w-full overflow-hidden bg-gray-100">
+        <img loading="lazy" alt="{{app.Settings['sitename']}}" src="/stream?image=/uploads/img/circles-bg.webp" class="absolute left-0 top-0 w-full" style="opacity: 0.1;" />
+        <div class="container grid mx-auto relative z-10">
+            <h3 class="title-gradient rounded-lg py-2 pl-40 pr-6 purple-color font-semibold text-xl " style="width: max-content;">
+                {{lang.__('CATS_LIST')}}
+            </h3>
+        </div>
+        <span :set="childs = []"></span>
+        <div class="container mx-auto relative lg:block flex z-10">
+            <div class="grid lg:grid-cols-5  custom-scroll lg:overflow-hidden overflow-auto h-64 lg:h-auto md:h-full sm:h-full md:grid-cols-3 grid-cols-1 lg:w-full w-64 lg:gap-10 lg:px-10 px-2 py-2 content-center mt-4" style="align-content:baseline" id="switch-cat">
+
+                {% for item in specializations %}
+                <div data-childs="{{item.childs}}" class="block border-1  text-center border border-purple-300 cursor-pointer rounded-tl-2xl rounded-br-2xl bg-white   hover:bg-blue-400 lg:px-6 px-2 py-2 lg:pt-6 text-black hover:text-white switch-hover">
+                    <img loading="lazy" width="78" height="78" alt="{{item.content.title}}" src="/stream?image=/uploads/img/specialization-{{item.id}}-dark.webp" class="mx-auto pic-1 lg:w-auto w-10">
+                    <img loading="lazy" alt="{{item.content.title}}" src="/stream?image=/uploads/img/specialization-{{item.id}}.webp" class="mx-auto mx-auto pic-2 lg:w-auto w-10">
+                    <p class="pt-4 lg:text-xl text-base font-semibold lg:font-bold">{{item.content.title}}</p>
+                </div>
+                {% endfor %}
+
+            </div>
+            <div class="w-full block text-center mx-auto lg:mt-0 lg:ml-auto mt-2 ml-2 px-4 ">
+                <div class="gap-4 w-full block" id="cat-content">
+                    {% for child in specializations[0].childs %}
+                    <a class="lg:inline-block block lg:mx-2 my-2 py-2 px-4 lightcyan-bg font-semibold purple-color border border-purple-400 rounded-lg" href="{{child.content.prefix}}">{{child.content.title}}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>

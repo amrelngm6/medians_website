@@ -1,0 +1,53 @@
+{% include 'views/front/includes/header.html.twig' %}
+{% include 'views/front/includes/navbar.html.twig' %}
+
+
+    <div class="w-full cyan-bg py-2 lg:py-10 relative mb-10">
+        <div class="w-full overflow-hidden h-full absolute bottom-0 left-0">
+            <img loading="lazy" src="/stream?image=/uploads/img/light-network.webp" class="absolute left-0 top-0 w-full" style="opacity: .3;" />
+        </div>
+        <div class="container mx-auto relative">
+            <h1 class="text-2xl lg:pb-10  mx-auto w-96 text-center font-bold purple-color">{{lang.__('Bedaya success stories')}}</h1>
+        </div>
+    </div>
+    <div class="blog-content container mx-auto" id="app">
+        <div class="cairo hidden pt-10  purple-color font-semibold text-2xl text-center ">
+            مستشفي بداية هى مقصدك لحياة أفضل. تعرف علي قصص نجاح الحقن المجهري
+            <span class="mx-auto my-4 w-20 border border-b-1  border-gray-300 block"></span>
+        </div>
+        <p class="mx-auto text-center  pb-2 w-full px-4 lg:px-0 lg:w-8/12">
+            نقدر في مستشفي بداية قيمة سعي الزوجين لإنجاب طفل ونعي تماما بالضغط النفسي التي تسببه مشكلة تأخر الحمل أو العقم. لذلك قد قررنا بعرض قصص نجاح الحقن المجهري وعمليات الإخصاب المساعد المختلفه التي قمنا بها في المستشفى لمرضى ذو أعراض وأسباب عقم مختلفة لندعمك للأمام من خلال تجارب الأخرين الناجحه. فنحن لدينا معدلات تجارب الحقن المجهري الناجحة في مستشفى بداية تصل الي النسب العالمية وذلك بفضل التقنيات الحديثه المستخدمه وتحديد برامج علاجيه تناسب كل حالة على حده مع دكتور إسماعيل أبو الفتوح والفريق الطبي. فنحن هنا لإيجاد حلول مناسبه لكل أسرة وسوف نعمل معا لتكوين حياه أفضل.
+        </p>
+        
+        <span class="mx-auto my-10 w-full border border-b-1  border-gray-100 block"></span>
+        
+        <div class="offers-container px-2 relative">
+            <img loading="lazy" src="/stream?image=/uploads/img/light-network.webp" class="absolute left-0 top-0 w-full" style="opacity: .3;" />
+            
+
+
+        </div>
+
+        <modal :items="['XngNyF1c5x8', 'L0ijOp_9gt4', 'DfmuUO_FMoQ', 'qO0XY7IQYxk']" ref="modal"></modal>
+    </div>
+    <div class="relative py-10  w-full  cyan-gradient45 overflow-hidden ">
+        <img loading="lazy" src="/stream?image=/uploads/img/light-network.webp" class="absolute left-0 top-0 w-full" style="opacity: .4;" />
+        <div class="container  mx-auto relative z-10  px-2">
+            <div class="lg:w-5/12 lg:float-right relative  lg:top-20 ">
+                <h3 class=" text-xl lg:text-3xl font-semibold text-white">الاستشارات الطبية الاونلاين. محادثات فعاله مع أطبائنا اينما كنت</h3>
+                <p class=" py-6 purple-color lg:text-lg text-sm font-semibold">
+                    اذا كنت غير قادر على الخروج من المنزل أو كنت تقطن في بلد أجنبيه فلا داعي للقلق. نحن الان نوفر خدمة الاستشارات الطبيه الاإلكترونية عن طريق الإنترنت التي من خلالها يمكنك التحدث مع أحد الأطباء المتخصصين ومناقشة جميع التفاصيل والحصول على الإستشارة الطبية الاونلاين المناسبة.
+                    <a href="#!" class="mt-2 font-normal block mx-auto w-32 py-2 px-6 purple-bg text-white text-center text-sm rounded-lg">احجز موعدا</a>
+                </p>
+            </div>
+            <div class="lg:w-7/12 lg:inline-block hidden">
+                <img loading="lazy" src="/stream?image=/uploads/img/doctor.webp" style="max-width:none;" class="float-left" width="140%" />
+            </div>
+        </div>
+        <div class="crossed lg:block hidden">
+        </div>
+    </div>
+
+    {% include 'views/front/services_bottom.html.twig' %}
+
+{% include 'views/front/includes/footer.html.twig' %}

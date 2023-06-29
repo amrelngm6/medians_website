@@ -1,0 +1,24 @@
+{% include 'views/front/includes/header.html.twig' %}
+{% include 'views/front/includes/navbar.html.twig' %}
+
+<div class="w-full cyan-bg pb-6 pt-2 relative ">
+    <div class="w-full overflow-hidden h-full absolute bottom-0 left-0">        
+        <img loading="lazy"  alt="{{app.settings['sitename']}}" src="/stream?image=/uploads/img/light-network.webp" class="absolute left-0 top-0 w-full" style="opacity: .3;" />
+    </div>
+    <div class="container mx-auto relative">
+        <h1 class="text-2xl mx-auto w-auto text-center font-bold purple-color" >{{pageinfo.title ? pageinfo.title : lang.__('offers')}}</h1>
+    </div>
+</div>
+
+
+<div class="py-10">
+
+    <div class="blog-content container mx-auto">
+        {{app.renderTemplate(pageinfo.content, pageinfo).render( {'offers':items, 'pageinfo':pageinfo, 'app':app, 'lang':lang, } )|raw}}
+    </div>
+
+
+</div>
+
+
+{% include 'views/front/includes/footer.html.twig' %}

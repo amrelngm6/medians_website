@@ -1,0 +1,56 @@
+{% include 'views/front/includes/header.html.twig' %}
+{% include 'views/front/includes/navbar.html.twig' %}
+
+    <div class="w-full cyan-bg pb-6 pt-2 relative ">
+        <div class="w-full overflow-hidden h-full absolute bottom-0 left-0">        
+            <img loading="lazy"  alt="{{app.settings['sitename']}}" src="/stream?image=/uploads/img/light-network.webp" class="absolute left-0 top-0 w-full" style="opacity: .3;" />
+        </div>
+        <div class="container mx-auto relative">
+            <h1 class="text-2xl mx-auto w-32 text-center font-bold purple-color" >{{lang.__('search')}}</h1>
+            <div class="mx-auto w-80 my-0 relative z-10">
+                <form action="/search" class="absolute top-0  left-0 right-0 mx-auto">
+                    <input name="search" class="border-1 runded border border-1 border-gray-200 w-full text-sm rounded-2xl bg-white px-4 py-3" placeholder="{{lang.__('SEARCH_PLACEHOLDER')}}" value="{{search_text}}">
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="blog-content mt-2">
+
+        {% if search_text %}
+
+            {% if search_articles|length %}
+                {% set data = search_articles %}
+                {% set section_title = lang.__('Specializations') %}
+                {% include 'views/front/includes/search_result_section.html.twig' %}
+            {% endif %}
+
+            {% if search_doctors|length %}
+                {% set data = search_doctors %}
+                {% set section_title = lang.__('Doctors') %}
+                {% include 'views/front/includes/search_result_section.html.twig' %}
+            {% endif %}
+
+            {% if search_specs|length %}
+                {% set data = search_specs %}
+                {% set section_title = lang.__('Specializations') %}
+                {% include 'views/front/includes/search_result_section.html.twig' %}
+            {% endif %}
+
+            {% if serch_articles|length < 1 and search_doctors|length < 1 and search_specs|length < 1  %}
+            <div class="text-lg text-center mb-20 py-10">{{lang.__('EMPTY_RESULT')}}</div>
+            {% endif %}
+
+        {% else %}
+            <div class="text-lg text-center mb-20 py-10">{{lang.__('LOOKING_FOR_SOMETHING')}}</div>
+
+        {% endif %}
+
+
+
+
+    </div>
+    
+
+{% include 'views/front/includes/footer.html.twig' %} 

@@ -1,0 +1,19 @@
+
+                            {% if offers %}
+                            <div class="cyan-gradient45 rounded-lg py-2 mt-10 pl-40 pr-6 purple-color font-semibold text-lg  " >
+                                {{lang.__('offers')}}
+                            </div>
+                            {% endif %}
+                            {% for offer in offers %}
+                            <div class="relative border-1 border border-gray-100  bg-white rounded-tl-2xl rounded-br-2xl p-6 pb-6 my-6">
+                                <a href="#!" class="text-xl font-semibold py-2 mb-2 block purple-color">{{offer.content.title}}</a>
+                                <div class="text-gray-600">
+                                    {{offer.content.content | raw}}
+                                </div>
+
+                                <div class="w-full text-center ">
+                                    <a class="mx-auto my-2 py-3 px-4 cyan-bg purple-color rounded-lg  inline-block font-semibold  " href="/offer_booking/{{offer.id}}">{{lang.__('more_details')}}</a>
+                                </div>
+
+                            </div>
+                            {% endfor %}

@@ -1,0 +1,27 @@
+
+                            {% if stories %}
+                            <div class="cyan-gradient45 rounded-lg py-2 mt-10 pl-40 pr-6 purple-color font-semibold text-lg  " >
+                                {{lang.__('success_stories')}}
+                            </div>
+                            {% endif %}
+                            {% for item in stories %}
+
+                            <div class="bg-white rounded-tl-2xl rounded-br-2xl relative custom-scroll-item mt-4">
+                                <div class="pt-6 pb-20">
+                                    <div class="show-modal-iframe play-icon absolute z-10 cursor-pointer right-0 left-0 w-12 rounded-full border-4 border border-white mx-auto bg-white" data-youtube-link="{{item.field.video_link}}">
+                                        <img loading="lazy" alt="{{app.Settings['sitename']}}" width="46" height="46" src="/stream?image=/uploads/img/play-button_ex.webp"  />
+                                    </div>
+                                    <div class="relative rounded-tl-2xl rounded-br-2xl m-6 cyan-gradient-vertical p-10">
+                                        <div class="mb-4 text-white font-semibold custom-scroll h-32 p-2 overflow-auto">
+                                            <p>{{item.content.content|raw}}</p>
+                                        </div>
+                                        <div style="bottom: -85px;" class="w-full absolute right-0 left-0 bottom-0 w-30  mx-auto">
+                                            <div data-youtube-link="{{item.field.video_link}}" class="rounded-full border-4 border border-white  bg-white w-20 mx-auto show-modal-iframe ">
+                                                <img loading="lazy" alt="{{item.content.title}}" src="/stream?image={{item.thumbnail()}}" class="w-20 h-20 rounded-full" />
+                                            </div>
+                                            <a data-youtube-link="{{item.field.video_link}}" class="show-modal-iframe block mx-auto text-center w-64 font-semibold" href="javascript:;"><span>{{item.content.title}}</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
