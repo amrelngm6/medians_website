@@ -1,13 +1,9 @@
 /node_modules
 /vendor
-/uploads/files
-/uploads/bugs
 /app/config/database.php
 /app/config/parameters.yml
 
-/projects
 /old
-
 *.html
 .env
 cookie.txt

@@ -1,18 +1,47 @@
 {% include 'views/front/includes/header.html.twig' %}
-{% include 'views/front/includes/navbar.html.twig' %}
+<!-- {% include 'views/front/includes/navbar.html.twig' %} -->
 
-{% if item.home == 0 %}
-<div class="w-full cyan-bg pb-20 pt-2 relative ">
-    <div class="w-full overflow-hidden h-full absolute bottom-0 left-0">
-        <img loading="lazy" alt="{{app.settings['sitename']}}" src="/stream?image=/uploads/img/light-network.webp" class="absolute left-0 top-0 w-full" style="opacity: .3;" />
-        <h1 class="text-2xl mx-auto w-auto text-center font-bold purple-color">{{item.content.title}}</h1>
+    <div id="console" class='centerBox'>
+        <p id="consoleText" ></p>
     </div>
-</div>
-{% endif %}
-<div class="blog-content ">
+
+<div class="w-full relative">
+
+
+
+    <div class="absolute text-center left-0 right-0 mx-auto pt-6" style="z-index: 9999;">
+        <h2 class="text-4xl mt-20">Albanian school Quizzes App</h2>
+        <img src="//192.168.1.99:81/uploads/assets/app1.png">
+        <div class="h-64 mt-20" ></div>
+        <h2 class="text-4xl mt-20">Bedaya Hospitals website</h2>
+        <img src="//192.168.1.99:81/uploads/assets/web1.png">
+        <div class="h-64 mt-20" ></div>
+        <h2 class="text-4xl ">Albanian school Quizzes App</h2>
+        <img src="//192.168.1.99:81/uploads/assets/app2.png">
+        <h2 class="text-4xl ">PS Gaming booking management system</h2>
+        <img src="//192.168.1.99:81/uploads/assets/web2.png">
+        <h2 class="text-4xl ">PS Gaming management Mobile APP</h2>
+        <img src="//192.168.1.99:81/uploads/assets/app1.png">
+        <h2 class="text-4xl">Bedaya Hospitals website</h2>
+        <img src="//192.168.1.99:81/uploads/assets/web1.png">
+        <h2 class="text-4xl ">Albanian school Quizzes App</h2>
+        <img src="//192.168.1.99:81/uploads/assets/app1.png">
+    </div>
+    <div id="divTimeLineContainer" class=''>
+        <div id="divLeftEventContainer" class='eventContainer'>
+        </div>
+        <div id="divTimeLine" class='timeLine'>
+        </div>
+        <div id="divRightEventContainer" class='eventContainer'>
+        </div>
+        <div id="divCenterEventContainer">
+        </div>
+    </div>
+    
     <div class="mx-auto ">
-        {{app.renderTemplate(item.content.content, item).render( {'item':item, 'app':app, 'lang':lang, 'specializations':specializations, 'story_dates':story_dates, 'stories':stories, 'all_stories':all_stories, 'doctors': doctors, 'blog': blog} )|raw}}
+        {{app.renderTemplate(item.content.content, item).render( {'item':item, 'app':app, 'lang':lang,'blog': blog} )|raw}}
     </div>
+
 </div>
 
 {% include 'views/front/includes/footer.html.twig' %}

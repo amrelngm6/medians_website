@@ -140,6 +140,9 @@ Macaw::get('/reports/(:all)', \Medians\Reports\Application\ReportController::cla
 
 }
 
+Macaw::get('/assistant', \Medians\APIController::class.'@assistant');
+Macaw::get('/(:all)', \Medians\Pages\Application\PageController::class.'@pages');
+
 
 return $app->run();
 

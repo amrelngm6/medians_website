@@ -1,147 +1,94 @@
-    <footer class="w-full footer-bg relative">
-        <img loading="lazy" alt="{{app.Settings['sitename']}}" src="/stream?image=/uploads/img/light-network.webp" class="absolute left-0 top-10 w-full " style="opacity: .08;" />
-        <div class="mx-auto container py-10 px-2 lg:px-0 relative"  style="z-index:99">
-            <div class="flex w-full">
-                <div class="w-full"><a class="w-40 block py-2 px-6 bg-white rounded-lg" href="#!"><img loading="lazy" alt="{{app.Settings['sitename']}}" width="110" height="65" src="/stream?image=/uploads/img/Logo_j.webp"></a></div>
-                <div class="w-64">
-                    <a href="/booking" class="font-semibold block mx-auto w-32 py-2 px-6 cyan-bg text-center rounded-lg">{{lang.__('book now')}}</a>
+
+
+            <!-- Footer
+            ================================================== -->
+            <footer class="dark-shade-2-bg position-relative">
+
+                <div class="dots">
+                    <div class="the-dots"></div>
                 </div>
-            </div>
-            <div class="block lg:flex w-full gap gap-3">
-                <div class="w-full">
-                    <ul class="block text-white my-4">
-                        <li class="py-2 flex w-full">
-                            <div class="bg-white rounded-lg p-2 w-14 text-center mx-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto" width="24.917" height="35.501" viewBox="0 0 24.917 35.501">
-                                    <path id="pin" d="M12.417.25A12.108,12.108,0,0,1,21.25,3.875a11.908,11.908,0,0,1,3.667,8.792,16.988,16.988,0,0,1-1.292,5.958,34.589,34.589,0,0,1-3.125,6.25q-1.833,2.875-3.667,5.417T13.75,34.334l-1.333,1.417q-.5-.5-1.333-1.5T8.126,30.376Q6,27.5,4.334,24.793a38.083,38.083,0,0,1-3-6.126,16.842,16.842,0,0,1-1.333-6A11.972,11.972,0,0,1,3.625,3.875,11.972,11.972,0,0,1,12.417.25Zm0,16.833a4.4,4.4,0,0,0,3.167-1.292,4.33,4.33,0,0,0,0-6.25A4.389,4.389,0,0,0,12.417,8.25,4.411,4.411,0,0,0,8,12.667a4.409,4.409,0,0,0,4.417,4.416Z" transform="translate(0 -0.25)" fill="#36d3eb" /></svg>
+                
+                <div class="container sk__supercontainer position-relative">
+
+                    <span class="divider sk__subtle-divider"></span>
+
+                    <div class="row footer-main text-center text-sm-start">
+                        <div class="col-md-12 col-lg-6 footer-main-large-col mb-4 mb-lg-0">
+                            <div class="fancy-gradient-text-box">
+                                <h3 class="h3-elegant ">Start your journey now.</h3>
+                            </div>  
+                            <p class="p-v2 mw-440">We are the Median of the business triangle, connecting the three main dimentions ( Customer, Provider and Market ) using the technology solutions.</p>
+                            
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-3 footer-main-small-col widget_nav_menu">
+
+                            <div class="row">
+                                <div class="col">
+                                    <!-- Footer Social Icons Menu -->
+                                    <section class="footer-socials-section">
+                                        <h5>Follow Us & Stay Informed</h5>
+                                        <div class="footer-socials-inner">
+                                            <div class="footer-socials">
+                                                <a class="social-icons " href="https://www.facebook.com/medianssolutions" target="_blank"><img src="{{app.CONF.url}}website_assets/img/facebook.png" class="" alt="social" /></a>
+                                                <a class="social-icons " href="https://www.facebook.com/medianssolutions" target="_blank"><img src="{{app.CONF.url}}website_assets/img/twitter.png" class="" alt="social" /></a>
+                                                <a class="social-icons " href="https://www.facebook.com/medianssolutions" target="_blank"><img src="{{app.CONF.url}}website_assets/img/linkedin.png" class="" alt="social" /></a>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
                             </div>
-                            <a class="text-white font-semibold" href="#!">الدقي
-                                <span class="block text-gray-300 text-base font-normal">مستشفى بداية 2 شارع أحمد المليحي، الدقي، الجيزة،  </span>
-                            </a>
-                        </li>
-                        <li class="py-2 flex w-full">
-                            <div class="bg-white rounded-lg p-2 w-14 text-center mx-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto" width="24.917" height="35.501" viewBox="0 0 24.917 35.501">
-                                    <path id="pin" d="M12.417.25A12.108,12.108,0,0,1,21.25,3.875a11.908,11.908,0,0,1,3.667,8.792,16.988,16.988,0,0,1-1.292,5.958,34.589,34.589,0,0,1-3.125,6.25q-1.833,2.875-3.667,5.417T13.75,34.334l-1.333,1.417q-.5-.5-1.333-1.5T8.126,30.376Q6,27.5,4.334,24.793a38.083,38.083,0,0,1-3-6.126,16.842,16.842,0,0,1-1.333-6A11.972,11.972,0,0,1,3.625,3.875,11.972,11.972,0,0,1,12.417.25Zm0,16.833a4.4,4.4,0,0,0,3.167-1.292,4.33,4.33,0,0,0,0-6.25A4.389,4.389,0,0,0,12.417,8.25,4.411,4.411,0,0,0,8,12.667a4.409,4.409,0,0,0,4.417,4.416Z" transform="translate(0 -0.25)" fill="#36d3eb" /></svg>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-3 footer-main-small-col">
+                            <div class="row">
+                                <div class="col">
+                                    <!-- Widget - Subscribe
+                                    ================================================== -->
+                                    <div class="widget custom_subscribe_widget">
+                                        <div class="sk__widget-inner">
+
+                                            <!-- Preview Only Static Form -->
+                                            <h5>Zamalek Studio</h5>
+                                            <p class="p-v2 mw-440"><span>140 - 26 July,  </span><span>Zamalek, Cairo. </span><br /><span>+2(0)102 3366-111 </span><br /><span>info@medianssolutions.com</span></p>
+                                        </div>
+                                    </div>
+                                    <!-- /.custom_subscribe_widget -->
+                                </div>
                             </div>
-                            <a class="text-white font-semibold" href="#!">عيادات كليوباترا -زايد
-                                <span class="block text-gray-300 text-base font-normal">الشيخ زايد الشيخ زايد, المحور المركزى, </span>
-                            </a>
-                        </li>
-                        <li class="py-2 flex w-full">
-                            <div class="bg-white rounded-lg p-2 w-14 text-center mx-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto" width="24.917" height="35.501" viewBox="0 0 24.917 35.501">
-                                    <path id="pin" d="M12.417.25A12.108,12.108,0,0,1,21.25,3.875a11.908,11.908,0,0,1,3.667,8.792,16.988,16.988,0,0,1-1.292,5.958,34.589,34.589,0,0,1-3.125,6.25q-1.833,2.875-3.667,5.417T13.75,34.334l-1.333,1.417q-.5-.5-1.333-1.5T8.126,30.376Q6,27.5,4.334,24.793a38.083,38.083,0,0,1-3-6.126,16.842,16.842,0,0,1-1.333-6A11.972,11.972,0,0,1,3.625,3.875,11.972,11.972,0,0,1,12.417.25Zm0,16.833a4.4,4.4,0,0,0,3.167-1.292,4.33,4.33,0,0,0,0-6.25A4.389,4.389,0,0,0,12.417,8.25,4.411,4.411,0,0,0,8,12.667a4.409,4.409,0,0,0,4.417,4.416Z" transform="translate(0 -0.25)" fill="#36d3eb" /></svg>
-                            </div>
-                            <a class="text-white font-semibold" href="#!">مستشفى كليوباترا - مصر الجديدة
-                                <span class="block text-gray-300 text-base font-normal">ا 29 ش كليوباترا - الماظة - هليوبوليس</span>
-                            </a>
-                        </li>
-                        <li class="py-2 flex w-full">
-                            <div class="bg-white rounded-lg p-2 w-14 text-center mx-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto" width="24.917" height="35.501" viewBox="0 0 24.917 35.501">
-                                    <path id="pin" d="M12.417.25A12.108,12.108,0,0,1,21.25,3.875a11.908,11.908,0,0,1,3.667,8.792,16.988,16.988,0,0,1-1.292,5.958,34.589,34.589,0,0,1-3.125,6.25q-1.833,2.875-3.667,5.417T13.75,34.334l-1.333,1.417q-.5-.5-1.333-1.5T8.126,30.376Q6,27.5,4.334,24.793a38.083,38.083,0,0,1-3-6.126,16.842,16.842,0,0,1-1.333-6A11.972,11.972,0,0,1,3.625,3.875,11.972,11.972,0,0,1,12.417.25Zm0,16.833a4.4,4.4,0,0,0,3.167-1.292,4.33,4.33,0,0,0,0-6.25A4.389,4.389,0,0,0,12.417,8.25,4.411,4.411,0,0,0,8,12.667a4.409,4.409,0,0,0,4.417,4.416Z" transform="translate(0 -0.25)" fill="#36d3eb" /></svg>
-                            </div>
-                            <a class="text-white font-semibold" href="#!">عيادات كليوباترا -التجمع الخامس
-                                <span class="block text-gray-300 text-base font-normal">عيادات كليوباترا- ش ال 90 - التجمع الخامس</span>
-                            </a>
-                        </li>
-                    </ul>
+                        </div>
+
+                        <ul class="flex ">
+                            <li class="mr-2">
+                                <a href="/pages/about-us" class="footer-main-links gradient-links">Pricing & Terms</a>
+                            </li>
+                            <li class="mx-2">
+                                <a href="/pages/services" class="footer-main-links gradient-links">Services</a>
+                            </li>
+                            <li class="mx-2">
+                                <a href="/pages/products" class="footer-main-links gradient-links">Products</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <span class="divider sk__subtle-divider"></span>
+
+                    <div class="row footer-bottom">
+                        <div style="width: 63%;" class="col-12 col-md-4 order-xs-3 order-sm-3 order-md-2 text-center text-sm-start text-md-center">
+                            <p class="p-footer-copyright text-left">MEDIANS AGENCY SOLUTIONS Copyright © {{year}} </p>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 order-sm-2 order-md-3 text-center text-sm-end">
+                            <a class="footer-bottom-right-links" href="/pages/about-us" >About</a>
+                            <a class="footer-bottom-right-links" href="pages/services" >Services</a>
+                            <a class="footer-bottom-right-links" href="#contact-us" >Contact</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="w-full pt-6 lg:pr-20">
-                    <div class="font-bold pb-2 block text-white">{{lang.__('bedaya_specializations')}}</div>
-                    <ul class="block text-white ">
-                        {% for cat in app.specializations %}
-                        {% if cat.id == 2 %}
-                        {% for item in cat.childs %}
-                        <li class="py-1"><a href="/{{item.content.prefix}}">{{item.content.title}}</a></li>
-                        {% endfor  %}
-                        {% endif  %}
-                        {% endfor  %}
-                    </ul>
-                </div>
-                <div class="w-full ">
-                    <p class="py-6 font-bold pb-2 block text-white">{{lang.__('important links')}}</p>
-                    <ul class="block text-white ">
-                        <li class="py-1"><a href="/contact">{{lang.__('contact us')}}</a></li>
-                        <li class="py-1"><a href="#!">{{lang.__('Pregnancy period Calculator')}}</a></li>
-                        <li class="py-1"><a href="#!">{{lang.__('OVULATION_CALCULATOR')}}</a></li>
-                        <li>
-                            <div class="py-6 text-blue-500">
-                                <a title="Bedaya facebook" href="https://www.facebook.com/bedayaivf" class="inline-block bg-white rounded-lg p-2 w-10 text-center mx-2">
-                                    <i class="fab fa-facebook"></i>
-                                </a>
-                                <a title="Bedaya facebook"  href="https://www.facebook.com/bedayaivf" class="inline-block bg-white rounded-lg p-2 w-10 text-center mx-2 text-purple-600">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a title="Bedaya facebook"  href="https://www.youtube.com/@Bedayaivf" class="inline-block bg-white rounded-lg p-2 w-10 text-center mx-2 text-red-500">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                                <a title="Bedaya facebook"  href="https://www.snapchat.com/add/bedaya_hospital/" class="inline-block text-yellow-400 bg-white rounded-lg p-2 w-10 text-center mx-2">
-                                    <i class="fab fa-snapchat"></i>
-                                </a>
-                                <a title="Bedaya facebook"  href="https://twitter.com/bedayaivf/" class="inline-block bg-white rounded-lg p-2 w-10 text-center mx-2 text-blue-400">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="text-center font-semibold text-white">
-                <p>جميع الحقوق محفوظة لمستشفيات بداية 2023</p>
-                <img loading="lazy" src="/stream?image=/uploads/img/iso.webp" alt="ISO" width="85" height="38" class="mx-auto my-2">
-            </div>
-        </div>
-    </footer>
+
+            </footer>
+
+
     <div style="z-index:9999" id="modal-wrapper" class="w-full fixed left-0 top-0 h-screen hidden ">
         <div id="modal-bg" style="background:rgba(0, 0, 0, .5);" class="absolute w-full h-full left-0"></div>
         <div id="modal-content"  class="p-10 bg-white rounded-2xl m-auto absolute left-0 right-0 top-0 bottom-0 max-w-2xl my-10" style="z-index:9"></div>
     </div>
-    <!-- <script src="/assets?asset=/src/front/owl/owl.carousel.min.js"></script> -->
-    <!-- <script src="/assets?asset=/src/front/js/sweetalert2@11.js"></script> -->
-    <script src="/assets?asset=/src/front/js/all.js"></script>
-    <script type="text/javascript">
-    jQuery(document).ready(function (e) {
-        jQuery(document).on('click', '#modal-bg', function(e) {
-            jQuery('#modal-wrapper').addClass('hidden')
-            jQuery('#modal-content').html(' ')
-        })
-        jQuery(document).on('click', '.show-modal-iframe', function(e) {
-            jQuery('#modal-wrapper').removeClass('hidden')
-            var link = "https://www.youtube.com/embed/"+jQuery(this).data('youtube-link');
-            var iframe = document.createElement('iframe');
-            iframe.frameBorder=0;
-            iframe.width="100%";
-            iframe.height="100%";
-            iframe.id="v-"+jQuery(this).data('youtube-link');
-            iframe.setAttribute("src", link);
-            document.getElementById("modal-content").appendChild(iframe);
-        })
-        // body...
-        $('.owl-carousel').owlCarousel({
-            loop:true,
-            margin:10,
-            responsiveClass:true,
-            responsive:{
-                0:{
-                    items:1,
-                    nav:true
-                },
-                600:{
-                    items:3,
-                    nav:false
-                },
-                1000:{
-                    items:4,
-                    nav:true,
-                    loop:true
-                }
-            }
-        })
-    })
-
-    </script>
-</body>
-
-</html>
+    
+{% include './views/front/includes/foot.html.twig' %}    

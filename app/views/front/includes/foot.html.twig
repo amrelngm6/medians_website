@@ -1,0 +1,95 @@
+
+
+    </div>
+
+    <script  src="{{app.CONF.url}}src/website_assets/js/parallax.min.js"></script>
+
+    <script src="{{app.CONF.url}}src/website_assets/js/vendor/hc-offcanvas-nav.js"></script>
+    <script src="{{app.CONF.url}}src/website_assets/js/vendor/gsap.min.js"></script>
+    <script src="{{app.CONF.url}}src/website_assets/js/vendor/ScrollTrigger.min.js"></script>
+    <script src="{{app.CONF.url}}src/website_assets/js/vendor/ScrollSmoother.min.js"></script>
+    <script src="{{app.CONF.url}}src/website_assets/js/vendor/ScrollToPlugin.min.js"></script>
+    <script src="{{app.CONF.url}}src/website_assets/js/vendor/slick.min.js"></script>
+    <script  src="{{app.CONF.url}}src/website_assets/js/vendor/theme.js"></script>
+    <script  src="{{app.CONF.url}}src/assets/rallax.js"></script>
+    <script  src="{{app.CONF.url}}src/website_assets/js/demo.js"></script>
+
+    <script src="/assets?asset=/src/front/js/all.js"></script>
+    <script type="text/javascript">
+
+    jQuery(document).ready(function (e) {
+
+        // var rellax = new Rellax('.rellax');
+
+        jQuery(document).on('click', '#modal-bg', function(e) {
+            jQuery('#modal-wrapper').addClass('hidden')
+            jQuery('#modal-content').html(' ')
+        })
+        jQuery(document).on('click', '.show-modal-iframe', function(e) {
+            jQuery('#modal-wrapper').removeClass('hidden')
+            var link = "https://www.youtube.com/embed/"+jQuery(this).data('youtube-link');
+            var iframe = document.createElement('iframe');
+            iframe.frameBorder=0;
+            iframe.width="100%";
+            iframe.height="100%";
+            iframe.id="v-"+jQuery(this).data('youtube-link');
+            iframe.setAttribute("src", link);
+            document.getElementById("modal-content").appendChild(iframe);
+        })
+        // body...
+
+        $('.one-owl-carousel').owlCarousel({
+            loop:true,
+            margin:10,
+            responsiveClass:true,
+            items:1,
+        })
+        $('.owl-carousel').owlCarousel({
+            loop:true,
+            margin:10,
+            responsiveClass:true,
+            responsive:{
+                0:{
+                    items:1,
+                    nav:true
+                },
+                600:{
+                    items:3,
+                    nav:false
+                },
+                1000:{
+                    items:4,
+                    nav:true,
+                    loop:true
+                }
+            }
+        })
+    })
+
+    </script>
+
+
+    <style type="text/css">
+        .footer-logo img {
+            width: 150px;
+        }
+    </style>
+
+
+    <script type="text/javascript">
+
+        jQuery(document).ready( function(e){
+            setTimeout(function(){
+                document.documentElement.scrollTop = 0;
+            },600);
+        });
+        jQuery(document).on('click','.ToggleItem', function(e){
+            jQuery(jQuery(this).attr('data-toggle-target')).toggleClass(jQuery(this).attr('data-toggle-class'));
+        });
+
+    </script>
+
+
+</body>
+
+</html>

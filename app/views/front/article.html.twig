@@ -1,55 +1,8 @@
 {% include 'views/front/includes/header.html.twig' %}
-{% include 'views/front/includes/navbar.html.twig' %}
 
-    <div class="w-full py-2 cyan-bg relative mb-10">
-        <div class="w-full overflow-hidden h-full cyan-bg absolute top-0 left-0">
-            <img loading="lazy" alt="{{app.Settings['sitename']}}" src="/stream?image=/uploads/img/light-network.webp" class="absolute left-0 top-0 w-full" style="opacity: .3;" />
-            <img loading="lazy" alt="{{app.Settings['sitename']}}" src="/stream?image=/uploads/img/circles-bg.webp" class="absolute left-0 bottom-0 w-full" style="opacity: .3;" />
-        </div>
-        <div class="container mx-auto relative px-1">
-            <p class="text-sm lg:pb-2 flex gap-2 font-bold text-gray-600">
-                <a href="/">{{lang.__('homepage')}} </a> | <a href="/blog">{{lang.__('blog')}} </a> | <span class="purple-color">{{item.content.title}}</span></p>
-            <div class="mx-auto w-full relative z-10 mb-8">
-                <div class="relative top-0  left-0 right-0 px-0 pt-2 pb-6">
-                    <div class="lg:flex block w-full  gap-3 gap">
-                        <div class="lg:w-8/12 w-full bg-white border-1 border border-gray-100 rounded-lg  p-2 mb-10" >
-                            <h1 class="text-xl purple-color font-bold mb-4">{{item.content.title}}</h1>
-                            <hr class="pb-2" />
-                            <p class="lg:px-2 float-left lg:text-base text-xs"><span>{{lang.__('author')}} :</span> <span class="font-bold">{{item.field.author_name}}</span> </p>
-                            <p class="lg:text-base text-sm flex gap-2"><span>{{lang.__('released_at')}}:{{item.created_at | date('M, d Y')}}</span> • <span class=" hide-mobile">{{lang.__('views')}}: {{item.views_count}}</span></p>
-                            <img alt="{{item.content.title}}" width="800" height="532" src="/stream?image={{item.picture}}" class="w-full" />
-                            <div id="certificates" class="mt-10 relative mb-6 p-6 lightcyan-bg  rounded-lg overflow-hidden">
-                                <img loading="lazy"  alt="{{app.Settings['sitename']}}" src="/stream?image=/uploads/img/light-network.webp" class="absolute left-0 top-0 w-full" style="opacity: .3;" />
-                                <div class="relative">
-                                    <span class="block w-full text-lg font-bold pb-2 purple-color">جدول المحتوي</span>
-                                    <hr class="border-gray-400 my-4" />
-                                </div>
-                            </div>
-                            <div class="relative my-10 text-lg">
-                                {% set params = {'item': item} %}
-                                {{app.renderTemplate(item.content.content, item).render(params)|raw}}
-                            </div>
-                        </div>
-                        <div class="w-full lg:w-4/12">
-                            <div class="lg:px-0 px-1">
-                                {% include 'views/front/side_similar_items.html.twig' %}
-                                {% include 'views/front/side_offers.html.twig' %}
-                                {% include 'views/front/side_success_stories.html.twig' %}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="relative my-10 text-lg">
+        {% set params = {'item': item} %}
+        {{app.renderTemplate(item.content.content, item).render(params)|raw}}
     </div>
-
-
-    <div class="relative pb-20  w-full overflow-hidden px-1">
-        <img loading="lazy"  alt="{{app.Settings['sitename']}}" src="/stream?image=/uploads/img/circles-bg.webp" class="absolute left-0 top-0 w-full" style="opacity: 0.05;" />
-        <div class="container mx-auto relative z-10">
-            {% include 'views/front/side_specs_similar_items.html.twig' %}
-        </div>
-    </div>
-
 
 {% include 'views/front/includes/footer.html.twig' %}

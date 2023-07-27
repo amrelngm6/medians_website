@@ -3,13 +3,22 @@
 
 <head>
     
+    <!--====== USEFULL META ======-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{item.content.title ? item.content.title : app.setting('sitename')}}</title>
     <meta name="description" content="{{item.content.seo_desc ? item.content.seo_desc : 'مجموعة مستشفيات بداية متخصصون فى علاج العقم وأمراض الذكورة وأطفال الانابيب وأمراض الجهاز التناسلي'}}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="canonical" href="{{app.request.uri}}">
+    <title>{{item.content.title ? item.content.title : app.setting('sitename')}}</title>
+
+    <!-- Google Fonts -->
+    <!-- <script src="webfont.js"></script> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Cairo:wght@200;600;700;800&family=Fjalla+One&family=Noto+Sans:wght@100;200;300;400;500&family=Titillium+Web:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ app.request.uri}}">
@@ -34,15 +43,49 @@
     <link href="/assets?asset=/src/builder/kopage_files/inc/live.css?v=4.4.2" rel="stylesheet" />
     <link href="/assets?asset=/src/front/css/custom.css" rel="stylesheet">
 
+    <link href="/assets?asset=/src/website_assets/css/tailwind.css" rel="stylesheet">
+    <link href="/assets?asset=/src/website_assets/css/theme.css" rel="stylesheet">
+    <link href="/assets?asset=/src/website_assets/css/bootstrap.min.css" rel="stylesheet">
+
+
     <!-- JS -->
     <script src="/assets?asset=/src/front/js/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript">
-    var rootURL = 'https://bedaya.medianssolutions.com/';
-    var imageURL = 'https://bedaya.medianssolutions.com/route/image.php?';
-    </script>
+
     <style>.text-default{text-align: {{lang.__('lang') == 'ar' ? 'right' : 'left'}} }</style>
+    
     <!-- UA-89806532-4 -->
     <meta name="google-site-verification" content="-X2XHH_xRXPphZ-NG1_0ldtVIn2TQq5wHG8VRu9yZmY" />
-    
+
+    <!-- CSS Assets -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N17SHZVQDX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-N17SHZVQDX');
+    </script>
+
+    <style id="theia-sticky-sidebar-stylesheet-TSS">.theiaStickySidebar:after {content: "";display: table;clear: both;}</style>
+
+    <script type="text/javascript">
+        var rootURL = '{{app.CONF.url}}';
+        var imgURL = rootURL+'image.php?w=400&h=400&img=pic&src=';
+    </script>
+
+
+
+
+    <!-- Parallax full page  -->
+
+    <script type="text/javascript" src="//192.168.1.99/parallax/javascript/timeLine.js"></script>
+    <script type="text/javascript" src="//192.168.1.99/parallax/javascript/consolePrinter.js"></script>
+    <script type="text/javascript" src="//192.168.1.99/parallax/javascript/gamebrain.js"></script>
+    <script type="text/javascript" src="//192.168.1.99/parallax/javascript/math.js"></script>
+    <script type="text/javascript" src="//192.168.1.99/parallax/javascript/draw.js"></script>
+    <script type="text/javascript" src="//192.168.1.99/parallax/javascript/utility.js"></script>
+    <link rel="stylesheet" href="//192.168.1.99/parallax/css/layout.css" type="text/css" media="screen">
+
 </head>
-<body class="p-0 m-0 {{lang.__('dir')}}">
+<body class="p-0 m-0 {{lang.__('dir')}} bg-black" onload="init()" onscroll="scroll()">
+<div id="webste-container">

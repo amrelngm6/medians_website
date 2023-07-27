@@ -255,7 +255,6 @@ class PageController extends CustomController
 		        
 
 		} catch (\Exception $e) {
-			print_r($e);
 			throw new \Exception( $e->getMessage(), 1);
 		}
 	} 

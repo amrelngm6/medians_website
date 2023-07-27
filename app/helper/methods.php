@@ -106,7 +106,7 @@ function response($response)
 */ 
 function __($langkey = null)
 {
-    $Langs = (new helper\Lang($_SESSION['site_lang']))->load();
+    $Langs = (new helper\Lang(isset($_SESSION['site_lang']) ? $_SESSION['site_lang'] : null))->load();
     return !empty($Langs->__($langkey)) ? $Langs->__($langkey) : ucfirst(str_replace('_', ' ', $langkey));
 }
 

@@ -27,6 +27,23 @@ class APIController
 	}
 
 
+	public function assistant()
+	{
+		$app = new \Config\APP;
+
+		$query = $app->request()->get('q');
+		$token = "ENAO2U575TA75ZBF4BZR7GDTOPGKMLRU";
+		$url = "https://api.wit.ai/message?v=".date('Ymd')."&q=".urlencode($query);
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array("Authorization: Bearer ".$token));
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		$result = curl_exec($ch);
+		curl_close($ch);
+		print_r($result);
+		return $result;
+	}
+
 	/**
 	 * Model object 
 	 * 

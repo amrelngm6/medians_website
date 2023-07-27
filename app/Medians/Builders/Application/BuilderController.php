@@ -32,8 +32,8 @@ class BuilderController extends CustomController
 
 			return render('views/admin/builder/index.html.twig', [
 				'page' => $check, 
-				'precode' => (substr(trim($check->content), 0, 8) == '<section') ? '' : '<section id="newKeditItem" class="kedit">', 
-				'postcode' => (substr(trim($check->content), 0, 8) == '<section') ? '' : '</section>', 
+				'precode' => (isset($check->content) && substr(trim($check->content), 0, 8) == '<section') ? '' : '<section id="newKeditItem" class="kedit">', 
+				'postcode' => (isset($check->content) && substr(trim($check->content), 0, 8) == '<section') ? '' : '</section>', 
 			]);
 
 		} catch (\Exception $e) {

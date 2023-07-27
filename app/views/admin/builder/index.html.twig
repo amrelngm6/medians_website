@@ -20,7 +20,7 @@
     <link rel="apple-touch-icon" href="/kopage_files/editor_images/favicon.png" />
     <script src="/assets?asset=/src/builder/js/jquery.min.js" type="text/javascript"></script>
     <link href="/assets?asset=/src/builder/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/assets?asset=/src/builder/kopage_files/inc/live.css?v=4.4.2" type="text/css" rel="stylesheet" />
+    <link href="/assets?asset=/src/builder/kopage_files/inc/live.css" type="text/css" rel="stylesheet" />
     <link href="//fonts.googleapis.com/css?family=Jost:200,400,700|Roboto:200,400,700&amp;subset=latin-ext&amp;display=swap" rel="stylesheet" type="text/css" />
     <!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script><script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script><![endif]-->
     <style>:root{--ui-color-accent: #179BD7;--ui-color-accent-75: rgba(23,155,215,0.7);--ui-color-accent-50: rgba(23,155,215,0.5);--ui-color-accent-25: rgba(23,155,215,0.25);--ui-color-accent-light: rgba(23,155,215,0.1);--ui-color-stripes-accent:repeating-linear-gradient(
@@ -48,7 +48,7 @@
     </script>
 </head>
 
-<body class="">
+<body class="bg-black">
     <div id="spinnerHolder" class="koLoading" onclick="koHideLoading()">
         <div id="k_spinner"></div>
         <div id="k_spinnerImage" style="background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+Cjxzdmcgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDUwIDUwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zOnNlcmlmPSJodHRwOi8vd3d3LnNlcmlmLmNvbS8iIHN0eWxlPSJmaWxsLXJ1bGU6ZXZlbm9kZDtjbGlwLXJ1bGU6ZXZlbm9kZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MS40MTQyMTsiPgogICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMSwtMC4wMDA0NjY2NjcsLTAuMDAwNDY2NjY3KSI+CiAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMS42NjY2NywwLDAsMS42NjY2NywtMS43MTQ1MywtMS42OTc4NykiPgogICAgICAgICAgICA8cGF0aCBkPSJNMTMuODI4LDUuMTkxQzEzLjgyOCwyLjg4NyAxNS42OTUsMS4wMTkgMTgsMS4wMTlMMTguMDAxLDEuMDE5QzI2LjQ3NCwxLjAxOSAzMS4wMDEsMy4zMzYgMzEuMDAxLDE0LjAxOUMzMS4wMDEsMTUuMzM2IDMxLjAwMSwxNi42NzQgMzEuMDAxLDE3Ljk5MUMzMS4wMDEsMTkuNDcgMzAuOTM4LDIwLjg0OCAzMC43NjMsMjIuMTEyQzMwLjUwOSwyMy44NDMgMjkuMjA0LDI1LjIzNCAyNy40OTIsMjUuNTk4QzI1Ljc4LDI1Ljk2MSAyNC4wMjIsMjUuMjIxIDIzLjA4NywyMy43NDJDMjAuOTc1LDIwLjQxIDE4LjY5MSwxNi44MDEgMTguNjkxLDE2LjgwMUwxOC42OTEsMTYuNjY1QzE4LjY5MSwxNi42NjUgMjAuODk5LDEzLjQ3IDIyLjY1NiwxMC45MjhDMjMuMDcsMTAuMzI5IDIzLjExOCw5LjU0OSAyMi43NzksOC45MDRDMjIuNDQxLDguMjU5IDIxLjc3Myw3Ljg1NSAyMS4wNDUsNy44NTVDMjEuMDEzLDcuODU1IDIwLjk4Miw3Ljg1NSAyMC45NTEsNy44NTVDMjAuMjg0LDcuODU1IDE5LjY2Miw4LjE5MiAxOS4yOTgsOC43NTFDMTcuODMsMTEuMDA1IDE0LjEsMTYuNzMzIDE0LjEsMTYuNzMzTDE0LjEsMTYuODY5QzE0LjEsMTYuODY5IDE3LjA2NiwyMS43ODYgMTkuNDU1LDI1Ljc0OEMyMC4wODQsMjYuNzkxIDIwLjExNCwyOC4wOSAxOS41MzMsMjkuMTYxQzE4Ljk1MiwzMC4yMzEgMTcuODQ3LDMwLjkxNCAxNi42MjksMzAuOTU1QzE1LjQ3NSwzMC45NzggMTQuNDg0LDMwLjk5MSAxNC4wMjksMzAuOTkxQzQuOTkzLDMwLjk5MSAxLjAyOSwyOC41MDMgMS4wMjksMTcuOTkxQzEuMDI5LDE2LjY3NCAxLjAyOSwxNS4zMzYgMS4wMjksMTQuMDE5QzEuMDI5LDEwLjQ2NCAxLjQ5Miw3Ljg0IDIuNDI2LDUuOTJDMy4xOTYsNC4zMzcgNC45NTcsMy40OTYgNi42NzMsMy44OTFDOC4zODgsNC4yODYgOS42MDMsNS44MTQgOS42MDMsNy41NzRDOS42NDQsMTMuMTggOS42NDQsMjEuMDUxIDkuNjQ0LDI0Ljc0QzkuNjQ0LDI1LjI4NyA5Ljg2MSwyNS44MTEgMTAuMjQ3LDI2LjE5N0MxMC42MzQsMjYuNTgzIDExLjE1OCwyNi44IDExLjcwNCwyNi44QzExLjcwNSwyNi44IDExLjcwNSwyNi44IDExLjcwNiwyNi44QzEyLjI2OCwyNi44IDEyLjgwOCwyNi41NzcgMTMuMjA2LDI2LjE3OUMxMy42MDQsMjUuNzgxIDEzLjgyOCwyNS4yNDEgMTMuODI4LDI0LjY3OEMxMy44MjgsMjAuNDE5IDEzLjgyOCwxMC43NjEgMTMuODI4LDUuMTkxWiIgc3R5bGU9ImZpbGw6d2hpdGU7ZmlsbC1vcGFjaXR5OjAuNzsiLz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo=);background-size:60px;" data-title="Please wait..."></div>
@@ -72,14 +72,14 @@
     <script>var magnificPopupInit=function(){jQuery('a.lightbox').magnificPopup({type:'image',gallery:{enabled:true}});}</script>
     <link rel="stylesheet" href="/src/builder/css/magnific-popup.min.css" />
     <script async src="/src/builder/js/jquery.magnific-popup.min.js" onload="magnificPopupInit()"></script>
-    <link type="text/css" rel="stylesheet" href="/src/builder/kopage_files/inc/live-admin.css?v=4.4.2" />
+    <link type="text/css" rel="stylesheet" href="/src/builder/kopage_files/inc/live-admin.css" />
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,800&amp;display=swap&amp;subset=latin,latin-ext" rel="stylesheet">
     <style>:root{--ui-font:'Poppins';--ui-font-normal:400;--ui-font-bold:700;--ui-font-system:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"}</style>
     <script>
     var subpagesList = "<ul data-menu=\"1\"><li><span data-id=\"1_1\">Home</span></li><li><span data-id=\"1_2\">About</span></li><li><span data-id=\"1_3\">Services</span></li><li><span data-id=\"1_4\">Contact</span></li></ul><ul data-menu=\"2\"><li><span data-id=\"2_1\">Terms of use</span></li><li><span data-id=\"2_2\">Privacy Policy</span></li></ul>";
     </script>
-    <script type="text/javascript" src="/src/builder/assets/js/assets.js?v=4.4.2"></script>
-    <script type="text/javascript" src="/src/builder/assets/js/admin.js?v=4.4.2"></script>
+    <script type="text/javascript" src="/src/builder/assets/js/assets.js"></script>
+    <script type="text/javascript" src="/src/builder/assets/js/admin.js"></script>
     <style>
         .keditable:not(:focus):before {
 					content: "Editable Area"
@@ -94,8 +94,8 @@
             <span class="ktoolset"><a href="javascript:void(null)" class="ktoolbarSave" onclick="k_EditSave('norefresh');keditableToolbar('hide')" data-balloon="Save changes" data-balloon-pos="down"><i class="fas fa-check"></i></a><a class="ktoolbarCancel" href="javascript:void(null)" onclick="keditableToolbar('hide')" data-balloon="Cancel" data-balloon-pos="down"><i class="fas fa-times"></i></a></span>
         </div>
     </div>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basicmodal@3.3.9/dist/basicModal.min.css" crossorigin="anonymous" />
-    <script src="https://cdn.jsdelivr.net/npm/basicmodal@3.3.9/dist/basicModal.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/assets?asset=/src/builder/css/basicModal.min.css" crossorigin="anonymous" />
+    <script src="/assets?asset=/src/builder/js/basicModal.min.js" crossorigin="anonymous"></script>
     <script>
         var modalExitEditor = {
 
@@ -1485,7 +1485,7 @@
             </div>
         </div>
         <div id="koMenu_contentDesigner" class="koLeftSubmenu">
-            <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js" async defer></script>
+            <script src="/assets?asset=/src/builder/js/Sortable.min.js" async defer></script>
             <div class="koLeftSubmenuControls">
                 <a href="javascript:void(null)" onclick="koMenuClose('koMenu_content')"><i class="fas fa-angle-left"></i></a>
             </div>
@@ -9063,7 +9063,7 @@ function refreshFManager(){
     <script>
     var menuCaption = "Select a page";
     </script>
-    <script type="text/javascript" src="/src/builder/kopage_files/inc/live.js?4.4.2" async></script>
+    <script type="text/javascript" src="/src/builder/kopage_files/inc/live.js" async></script>
     <!-- <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" rel="stylesheet" /> -->
     <script src="/src/builder/assets/js/bootstrap.bundle.min.js" type="text/javascript"></script>
     <script type="text/javascript" id="jsMenusSetup">
