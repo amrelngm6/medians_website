@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vertical Timeline with Parallax Effect</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		.timeline {
+			position: relative;
+			height: 100vh;
+			width: 100%;
+			overflow-x: hidden;
+			overflow-y: scroll;
+		}
+		.timeline:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 50%;
+			width: 2px;
+			height: 100%;
+			background-color: #ccc;
+			transform: translateX(-50%);
+		}
+		.timeline-item {
+			position: relative;
+			margin: 0 auto;
+			padding: 50px 0;
+			width: 80%;
+			max-width: 800px;
+			text-align: center;
+		}
+		.timeline-item:before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background-color: #fff;
+			border: 2px solid #ccc;
+		}
+		.timeline-item .date {
+			font-size: 20px;
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+		.timeline-item .content {
+			font-size: 16px;
+			line-height: 1.5;
+		}
+		.timeline-item.parallax {
+			background-attachment: fixed;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.timeline-item.parallax .content {
+			position: relative;
+			z-index: 1;
+			color: #fff;
+			text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+		}
+	</style>
+</head>
+<body>
+	<div class="timeline">
+		<div class="timeline-item">
+			<div class="date">2005</div>
+			<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod nunc ac turpis dictum, et fermentum nisl bibendum.</div>
+		</div>
+		<div class="timeline-item parallax" style="background-image: url('/uploads/img/article-2.png');">
+			<div class="date">2010</div>
+			<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod nunc ac turpis dictum, et fermentum nisl bibendum.</div>
+		</div>
+		<div class="timeline-item">
+			<div class="date">2015</div>
+			<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod nunc ac turpis dictum, et fermentum nisl bibendum.</div>
+		</div>
+		<div class="timeline-item parallax" style="background-image: url('/uploads/img/article-2.png');">
+			<div class="date">2020</div>
+			<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod nunc ac turpis dictum, et fermentum nisl bibendum.</div>
+		</div>
+	</div>
+	<script>
+		window.addEventListener('scroll', function() {
+			var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+			var items = document.querySelectorAll('.timeline-item.parallax');
+			for (var i = 0; i < items.length; i++) {
+				var item = items[i];
+				var offset = item.offsetTop;
+				var height = item.offsetHeight;
+				if (scrollTop >= offset && scrollTop <= offset + height) {
+					item.style.backgroundPositionY = (scrollTop - offset) * 0.7 + 'px';
+				}
+			}
+		});
+	</script>
+</body>
+</html>

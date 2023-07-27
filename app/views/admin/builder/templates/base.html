@@ -1,0 +1,17 @@
+
+    <!-- Template assets -->
+    <link href="/assets?asset=/src/front/css/tailwind.min.css" rel="stylesheet">
+    <link href="/assets?asset=/src/front/css/custom.css" rel="stylesheet">
+    <link href="/assets?asset=/src/front/fontawesome/css/all.min.css" rel="stylesheet">  
+<input type="hidden" id="prefix-page" value="{{app.request.get('prefix')}}">
+
+{% include 'views/front/includes/header.html.twig'   %}
+<main class="WxEditableArea" id="contentArea">
+    <div id="contentAreaElement" class="kelement"></div>
+    
+    {{precode|raw}}
+        {{content|raw}} 
+    {{postcode|raw}}
+    
+</main>
+{% include 'views/front/includes/footer.html.twig'   %}
